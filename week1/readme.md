@@ -16,3 +16,5 @@ ls
 
 python3 ../course/week1/tests.py 
 #runs tests
+
+#Note: pressing up key scrolls through previous commands. Useful

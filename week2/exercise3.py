@@ -7,7 +7,7 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
+    return bool(a_number%2)
 
 
 def fix_it(moves=True, should_move=True):
@@ -25,9 +25,18 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
-
-
+    if moves==True:
+        if should_move==False:
+            return ("Duct Tape")
+        elif should_move==True:
+            return ("No Problem")
+    
+    elif moves==False:
+        if should_move==True:
+            return ("WD-40")
+        elif should_move==False:
+            return("No Problem")
+    
 def loops_1a():
     """Make 10 stars.
 
@@ -35,8 +44,9 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
-
+    star_list = ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"]
+    for x in star_list:
+        return star_list
 
 def loops_1c(number_of_items=5, symbol="#"):
     """Respond to variables.
@@ -45,7 +55,9 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    for number_of_items in symbol:
+        print (symbol)
+        return
 
 
 def loops_2():
@@ -66,8 +78,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    star_list2 = ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"]
+    for x in star_list2:
+        print (star_list2)
+    
+    return
 
+    
 
 def loops_3():
     """Make a rising block of numbers.
@@ -90,7 +107,10 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    for x in range(10):
+        print(str(x))
+
+    return
 
 
 def loops_4():
@@ -160,7 +180,11 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+   
+    return 1234567890 / (10**(10-size))
+    
+    for size in range(1,11):
+    print y(size)
 
 
 def loops_7():
