@@ -55,10 +55,11 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    for number_of_items in symbol:
-        print (symbol)
-        return
+    results2 = []
+    for i in range (number_of_items):
+        results2.append(symbol)
 
+    return results2
 
 def loops_2():
     """Make a big square starfield.
@@ -78,12 +79,11 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    star_list2 = ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"]
-    for x in star_list2:
-        print (star_list2)
+    results3 = []
+    for i in range(10):
+        results3.append(loops_1a())
     
-    return
-
+    return results3
     
 
 def loops_3():
@@ -107,10 +107,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    for x in range(10):
-        print(str(x))
+    
+    results4 = []
 
-    return
+    for i in range (10):
+         print_row = [str(i),str(i), str(i), str(i), str(i), str(i), str(i), str(i), str(i), str(i)]
+         results4.append(print_row)
+
+    return results4
 
 
 def loops_4():
@@ -130,8 +134,18 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    results5 = []
+    results6 = []
 
+    i=0
+    while i < 10:
+        results5.append(str(i))
+        i=i+1
+
+    for i in range (10):
+         results6.append(results5)
+    
+    return results6
 
 def loops_5():
     """Make the coordinates of the block.
@@ -157,7 +171,16 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    
+    results7 = []
+
+    for ii in range (10):
+        temp1 = []
+        for jj in range(5):
+            temp1.append('(i{a}, j{b})'.format(a=ii,b=jj))
+        results7.append(temp1)
+
+    return results7
 
 
 def loops_6():
@@ -180,12 +203,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-   
-    return 1234567890 / (10**(10-size))
-    
-    for size in range(1,11):
-    print y(size)
+    results8 = []
 
+    for i in range (0,10):
+        temp = []
+        for j in range (0,i+1):
+            temp.append(str(j))
+        results8.append(temp)
+    return results8
 
 def loops_7():
     """Make a pyramid.
