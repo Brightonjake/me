@@ -24,7 +24,10 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    my_list= []
+    for i in range (start,stop,step):
+        my_list.append(i)
+    return my_list
 
 
 def two_step_ranger(start, stop):
@@ -33,7 +36,10 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    my_list= []
+    for i in range (start,stop,2):
+        my_list.append(i)
+    return my_list
 
 
 def stubborn_asker(low, high):
@@ -44,8 +50,12 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
-
+    InputNumber = input ("Please input a number: ")
+    InputNumber = int(InputNumber)
+    while InputNumber < low or InputNumber > high:
+        InputNumber = input ("Outside of Range, Please input another number: ")
+        InputNumber = int(InputNumber)
+    return InputNumber
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
@@ -54,8 +64,16 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    Input_number = input(message)
 
+    while True:
+        try:
+            Input_number == int(Input_number)
+        except ValueError:
+            Input_number = input(message)  
+    
+    Input_number = int(Input_number)
+    return Input_number 
 
 def super_asker(low, high):
     """Robust asking function.
@@ -65,7 +83,15 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    Inputnumber = input ("Please input a number: ")
+    
+    message = "Enter a real number: "
+    not_number_rejector(message)
+        
+    while Inputnumber < low or Inputnumber > high:
+            Inputnumber = input ("Outside of Range, Please input another number: ")
+            Inputnumber = int(InputNumber)
+    return Inputnumber
 
 
 if __name__ == "__main__":
