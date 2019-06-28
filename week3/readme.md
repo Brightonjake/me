@@ -63,3 +63,58 @@ while True:
         return Input_number
 
 #combination of the two above, not perfect
+
+
+Exercise 3
+
+#Edited from exercise 2
+#Added lower bound, error message for outside of bounds, integer check
+
+while True:
+        try:
+            lower = int(input("Enter a lower bound: "))
+            print ("Thanks! {} looks good.".format (lower))
+            break
+        except Exception as e:
+            print ("err, you wot, try again ({})".format(e)) 
+#added input for lower bound, within check for integer (exercise 1)
+    while True:
+        try:
+            upper = int(input("Enter an upper bound: "))
+            print ("Thanks! {} looks good.".format (upper))
+            break
+        except Exception as e:
+            print ("err, you wot, try again ({})".format(e)) 
+#Check for integer added to upper bound input
+    while upper < lower:
+      print ("Your upper bound is lower than your lower limit!")
+      upper = int(input("Enter another upper bound: "))
+#Check to make sure upper bound > lower bound
+    print("OK then, a number between {} and {} ?".format(lower,upper))
+    actualNumber = random.randint(lower, upper)
+#range changed from (0,upper) to (lower to upper)
+    guessed = False
+
+    while not guessed:
+      while True:
+        try:
+            guessedNumber = int(input("Guess a number: "))
+            print ("Thanks! {} looks good.".format (guessedNumber))
+            break
+        except Exception as e:
+            print ("err, you wot, try again ({})".format(e)) 
+#check for integer added to guess
+
+      print("You guessed {},".format(guessedNumber),)
+      if guessedNumber == actualNumber:
+          print("You got it!! It was {}".format(actualNumber))
+          guessed = True
+      elif guessedNumber < lower or guessedNumber > upper:
+          print("Out of Range, try again :'(")
+#out of range error for guess
+      elif guessedNumber < actualNumber:
+          print("Too small, try again :'(")
+      else:
+          print("Too big, try again :'(")
+    
+    return "You got it!"

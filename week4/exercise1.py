@@ -36,7 +36,14 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+
+    answer1= data["results"][0]["name"]["last"]
+    answer2= data["results"][0]["login"]["password"]
+    answer3= int(data["results"][0]["id"]["value"])
+    answer4= int(data["results"][0]["location"]["postcode"])
+    answer5= answer3 + answer4
+
+    return {"lastName": answer1, "password": answer2, "postcodePlusID": answer5}
 
 
 def wordy_pyramid():
@@ -74,8 +81,20 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+    answer=[]
 
+    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={i}&maxLength={i}&limit=1"
+
+    url = template.format(base=template)
+    r = requests.get(url)
+    if r.status_code is 200:
+        the_json = json.loads(r.text)
+
+    ?argName=argVal
+
+    for i in range (2,19,2):
+       
+    for i in range (19,2,-2):
 
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
