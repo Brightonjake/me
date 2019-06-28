@@ -64,16 +64,14 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    Input_number = input(message)
 
     while True:
         try:
-            Input_number == int(Input_number)
-        except ValueError:
-            Input_number = input(message)  
-    
-    Input_number = int(Input_number)
-    return Input_number 
+            Input_number = int(input(message))
+            print ("Thanks! {} looks good.".format (Input_number))
+            return Input_number
+        except Exception as e:
+            print ("err, you wot, try again ({})".format(e)) 
 
 def super_asker(low, high):
     """Robust asking function.
@@ -83,15 +81,20 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    Inputnumber = input ("Please input a number: ")
-    
-    message = "Enter a real number: "
-    not_number_rejector(message)
+    message = "Enter a number: "
+
+    while True:
+        try:
+            Input_number = int(input(message))
+            print ("Thanks! {} looks good.".format (Input_number))
+            break
+        except Exception as e:
+            print ("err, you wot, try again ({})".format(e)) 
         
-    while Inputnumber < low or Inputnumber > high:
-            Inputnumber = input ("Outside of Range, Please input another number: ")
-            Inputnumber = int(InputNumber)
-    return Inputnumber
+    while Input_number < low or Input_number > high:
+        Input_number = input ("Outside of Range, Please input another number: ")
+        Input_number = int(Input_number)
+        return Input_number
 
 
 if __name__ == "__main__":
