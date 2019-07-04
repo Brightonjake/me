@@ -118,3 +118,27 @@ while True:
           print("Too big, try again :'(")
     
     return "You got it!"
+
+
+
+Exercise 4
+#Binary search, algorithm (finds answer without input) 
+
+tries = 0
+guess = round (low + 0.5*(high-low), None)
+#Guess is halfway between high and low, depending on input
+#Note: it's rounded, reduces the number of permutations required. First argument is number to be rounded (in this case our expression), 2nd argument is the digit that is rounded to (default is 0, ie. whole numbers)
+
+while guess != actual_number:
+#while loop: keeps looping until condition met
+    if guess > actual_number:
+        high = guess
+#changes bound to narrow search
+    elif guess < actual_number:
+        low = guess
+#same as above but opposite as guess < actual_number
+    guess = round (low + 0.5*(high-low), None)
+    tries = tries + 1
+#Must change inputs for while loop!!!!!
+    return {"guess": guess, "tries": tries}
+#Dictionary. Code more simple if it uses terms required to return as variables
