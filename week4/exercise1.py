@@ -83,18 +83,17 @@ def wordy_pyramid():
     """
     answer=[]
 
-    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={i}&maxLength={i}&limit=1"
+    key = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
+    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
+    url = template.format(base=template, minLength=length, maxLength=length, limit=limit, key=key)
 
-    url = template.format(base=template)
     r = requests.get(url)
     if r.status_code is 200:
         the_json = json.loads(r.text)
 
-    ?argName=argVal
-
-    for i in range (2,19,2):
+    #for i in range (2,19,2):
        
-    for i in range (19,2,-2):
+    #for i in range (19,2,-2):
 
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
@@ -112,11 +111,29 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(base=template, id=5)
+    
+    index = -1
+    tallest = -1
+
+    for x in range (low, high):
+        url = template.format(base=template,id=x)
+        r = requests.get(url)
+        if r.status_code is 200:
+            data = json.loads(r.text)
+            height = data["height"]
+            if height > tallest:
+                tallest = height
+                index = x
+
+    url = template.format(base=template,id=index)
     r = requests.get(url)
     if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+        data = json.loads(r.text)
+        answer1 = data["name"]
+        answer2 = data["weight"]
+        answer3 = data["height"]
+
+    return {"name": answer1, "weight": answer2, "height": answer3}
 
 
 def diarist():
