@@ -53,25 +53,41 @@ Word Pyramid
 
     key = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
     template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
-#? Divides website URL from the arguments [key, max length, min length, limit]
+
     
-    #for i in range (8):
-    for i in range (3,19,2):
-        url = template.format(base=template, minLength=i, maxLength=i, limit=1, key=key)
+    api_key = 
+#Fill in when it arrives!!!!
+
+    baseURL = (
+        "http://api.wordnik.com/v4/words.json/randomWords?"
+        "api_key={api_key}"
+        "&minLength={length}"
+        "&maxLength={length}"
+        "&limit=1"
+    )
+#? Divides website URL from the arguments [key, max length, min length, limit]
+#note nice indentation which breaks it up
+
+    pyramid_list = []
+    for i in range(3, 21, 2):
+        url = baseURL.format(api_key="", length=i)
         r = requests.get(url)
         if r.status_code is 200:
-            the_json = json.loads(r.text)
-            answer.append(str(the_json)
-
-    #for i in range (8):
-        #for i in reversed (range (19,3,-2)):
-            #url = template.format(base=template, minLength=i, maxLength=i, limit=1, key=key)
-            #r = requests.get(url)
-            #if r.status_code is 200:
-                #the_json = json.loads(r.text)
-                #answer.append(str(the_json))
-#Define function and recall so you don't have to copy code
-
+            message = r.json()[0]["word"]
+            pyramid_list.append(message)
+        else:
+            print("failed a request", r.status_code, i)
+    
+    for i in range(20, 3, -2):
+        url = baseURL.format(api_key="", length=i)
+        r = requests.get(url)
+        if r.status_code is 200:
+            message = r.json()[0]["word"]
+            pyramid_list.append(message)
+        else:
+            print("failed a request", r.status_code, i)
+    return pyramid_list
+#Explain
 
 
 
@@ -151,6 +167,8 @@ f.close
 
 
 
+
+Other
 
 Define error
 #Stated there was a syntax error with def of pokedex function

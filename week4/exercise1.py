@@ -81,27 +81,35 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    answer=[]
+    #api_key = 
+    #Fill in when it arrives!!!!
 
-    key = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
-    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
-    
-    #for i in range (8):
-    for i in range (3,19,2):
-        url = template.format(base=template, minLength=i, maxLength=i, limit=1, key=key)
+    baseURL = (
+        "http://api.wordnik.com/v4/words.json/randomWords?"
+        "api_key={api_key}"
+        "&minLength={length}"
+        "&maxLength={length}"
+        "&limit=1"
+    )
+    pyramid_list = []
+    for i in range(3, 21, 2):
+        url = baseURL.format(api_key="", length=i)
         r = requests.get(url)
         if r.status_code is 200:
-            the_json = json.loads(r.text)
-            answer.append(str(the_json))
-
+            message = r.json()[0]["word"]
+            pyramid_list.append(message)
+        else:
+            print("failed a request", r.status_code, i)
     
-    # for i in range (8):
-    #     for i in reversed (range (19,3,-2)):
-    #         url = template.format(base=template, minLength=i, maxLength=i, limit=1, key=key)
-    #         r = requests.get(url)
-    #         if r.status_code is 200:
-    #             the_json = json.loads(r.text)
-    #             answer.append(str(the_json))
+    for i in range(20, 3, -2):
+        url = baseURL.format(api_key="", length=i)
+        r = requests.get(url)
+        if r.status_code is 200:
+            message = r.json()[0]["word"]
+            pyramid_list.append(message)
+        else:
+            print("failed a request", r.status_code, i)
+    return pyramid_list
 
 
 def pokedex(low=1, high=5):
