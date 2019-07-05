@@ -233,64 +233,18 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    result9 = []
-    result10 = []
-    result11 = []
-    result12 = []
-    result13 = []
-    result14 = []
-    
-    n= 5
-    m= n-1
-    for j in range (0,m):
-        result9.append(" ")
-    for j in range (0, 1):
-        result9.append("*")
-    for j in range (0,m):
-        result9.append(" ")
-    result14.append(result9)
+    columns = []
+    for x in range(5):
+        rows = []
+        for y in range(9):
+            if abs(y-4) <= x:
+                rows.append('*')
+            else:
+                rows.append(' ')
+        columns.append(rows)
 
-    n= 4
-    m= n-1
-    for j in range (0,m):
-        result10.append(" ")
-    for j in range (0, 3):
-        result10.append("*")
-    for j in range (0,m):
-        result10.append(" ")
-    result14.append(result10)
-
-    n= 3
-    m= n-1
-    for j in range (0,m):
-        result11.append(" ")
-    for j in range (0, 5):
-        result11.append("*")
-    for j in range (0,m):
-        result11.append(" ")
-    result14.append(result11)
-
-    n= 2
-    m= n-1
-    for j in range (0,m):
-        result12.append(" ")
-    for j in range (0, 7):
-        result12.append("*")
-    for j in range (0,m):
-        result12.append(" ")
-    result14.append(result12)
-
-    n= 1
-    m= n-1
-    for j in range (0,m):
-        result13.append(" ")
-    for j in range (0, 9):
-        result13.append("*")
-    for j in range (0,m):
-        result13.append(" ")
-    result14.append(result13)
-    
-    return result14
+    print(columns)
+    return columns
 
 
 def lp(some_kind_of_list, exercise_name):
