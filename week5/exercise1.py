@@ -19,6 +19,7 @@ you'll need to figure out for yourself what to do.
 # This is a terrible function. The rest of the functions in this file do a
 # much better job of what it's trying to do. Once you've has a little look,
 # move on, and eventually delete this function. (And this comment!)
+
 def do_bunch_of_bad_things():
     print("Getting ready to start in 9")
     print("Getting ready to start in 8")
@@ -49,7 +50,9 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    pass
+    for i in range(start,stop):
+        print(message + "i")
+    print(completion_message)
 
 
 # TRIANGLES

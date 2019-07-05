@@ -85,15 +85,24 @@ def wordy_pyramid():
 
     key = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
     template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
-    url = template.format(base=template, minLength=length, maxLength=length, limit=limit, key=key)
+    
+    #for i in range (8):
+    for i in range (3,19,2):
+        url = template.format(base=template, minLength=i, maxLength=i, limit=1, key=key)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            answer.append(str(the_json))
 
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
+    
+    # for i in range (8):
+    #     for i in reversed (range (19,3,-2)):
+    #         url = template.format(base=template, minLength=i, maxLength=i, limit=1, key=key)
+    #         r = requests.get(url)
+    #         if r.status_code is 200:
+    #             the_json = json.loads(r.text)
+    #             answer.append(str(the_json))
 
-    #for i in range (2,19,2):
-       
-    #for i in range (19,2,-2):
 
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
@@ -111,7 +120,6 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    
     index = -1
     tallest = -1
 
@@ -132,6 +140,7 @@ def pokedex(low=1, high=5):
         answer1 = data["name"]
         answer2 = data["weight"]
         answer3 = data["height"]
+#Refactor: Make a function and recall
 
     return {"name": answer1, "weight": answer2, "height": answer3}
 
@@ -150,7 +159,14 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    pass
+    
+    #Read the file, search the string (string.split), find M10
+
+    gcode_data= open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
+    count = gcode_data.count("M10 P1")
+    f = open("week4/lasers.pew", "w+")
+    f.write(str(count))
+    f.close
 
 
 if __name__ == "__main__":
