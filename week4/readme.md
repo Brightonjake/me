@@ -128,10 +128,27 @@ if r.status_code is 200:
 
 
 def diarist():
-#Read Trispokedovetiles(laser).gcode and count the number of times the laser is turned on and off. That's the command "M10 P1".
-#Write the answer (a number) to a file called 'lasers.pew' in the week4 directory.
 
-#What was the purpose of this????
+gcode_data= open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
+#Opens and reads
+#No need for JSON.loads line as it is not a JSON file and doesn't need to be converted to a dictionary
+
+count = gcode_data.count("M10 P1")
+#Inbuilt function, counts entered argument/substring within the file/string
+
+f = open("week4/lasers.pew", "w+")
+#Defines variable. Opens a new file and gives writing permission
+#Note: Use of relative path (week4/) before the file name to save in the week 4 folder. started in me folder
+#This is different to absolute path which in this case would be "/Users/jbrighton/Documents/1161/me/week4/lasers.pew"
+
+f.write(str(count))
+#Command to write in file, f defined above
+#note: converted to string, count predefined above
+
+f.close
+#Important step, must close when you write for it to work
+
+
 
 
 
