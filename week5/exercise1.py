@@ -135,7 +135,7 @@ def wordy_pyramid(api_key):
     )
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -143,7 +143,7 @@ def wordy_pyramid(api_key):
         else:
             print("failed a request", r.status_code, i)
     for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -156,9 +156,6 @@ def wordy_pyramid(api_key):
 def get_a_word_of_length_n(length):
     import requests
 
-    #api_key = 
-    #Fill in!!!!
-
     pyramid_list = []
 
     baseURL = (
@@ -166,13 +163,13 @@ def get_a_word_of_length_n(length):
         "api_key={api_key}"
         "&minLength={length}"
         "&maxLength={length}"
-        "&limit=1"
+        "&limit=1" )
     
-    url = baseURL.format(api_key="", length=length)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
+    url = baseURL.format(length=length)
+    r = requests.get(url)
+    if r.status_code is 200:
+        message = r.json()[0]["word"]
+        pyramid_list.append(message)
     return pyramid_list
 
 def list_of_words_with_lengths(list_of_lengths):
@@ -187,16 +184,16 @@ def list_of_words_with_lengths(list_of_lengths):
         "api_key={api_key}"
         "&minLength={length}"
         "&maxLength={length}"
-        "&limit=10"
+        "&limit=10")
     
-    url = baseURL.format(api_key="", length=list_of_lengths)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
+    url = baseURL.format(length=list_of_lengths)
+    r = requests.get(url)
+    if r.status_code is 200:
+        message = r.json()[0]["word"]
+        pyramid_list.append(message)
     return pyramid_list
 
 
 if __name__ == "__main__":
     do_bunch_of_bad_things()
-    wordy_pyramid("a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5")
+    wordy_pyramid("yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo")

@@ -81,34 +81,32 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    #api_key = 
-    #Fill in when it arrives!!!!
 
-    baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
-        "&minLength={length}"
-        "&maxLength={length}"
-        "&limit=1"
-    )
+    baseURL = ("http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={length}&maxLength={length}&limit=1")
+    import time
+
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo", length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
             pyramid_list.append(message)
+            time.sleep(5)
         else:
             print("failed a request", r.status_code, i)
+            time.sleep(5)
     
     for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
             pyramid_list.append(message)
+            time.sleep(5)
         else:
             print("failed a request", r.status_code, i)
+            time.sleep(5)
     return pyramid_list
 
 

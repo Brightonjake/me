@@ -99,11 +99,11 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         if letter == "a":
-            return "a"
+            return "bba"
         elif letter == "b":
-            return "b"
+            return "aob"
         elif letter == "o":
-            return "o"
+            return "o" ?????????
         else:
             return letter
 
@@ -134,7 +134,8 @@ def draw_koch(drawing_method, steps_deep=4):
     https://docs.python.org/3/library/turtle.html
     """
     raphael = turtle.Turtle()
-    raphael.speed(1000)
+    raphael.speed(4)
+#change speed back up to 1000 afterwards
     raphael.penup()
     raphael.goto(-300, 0)
     raphael.pendown()
