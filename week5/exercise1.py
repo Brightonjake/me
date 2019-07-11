@@ -19,8 +19,8 @@ you'll need to figure out for yourself what to do.
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    for i in range(start,stop):
-        print(message + i)
+    for i in range(start,stop,-1):
+        print(message + str(i))
     print(completion_message)
 
 
@@ -34,19 +34,20 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    hypotenuse = base ** 2 + height ** 2
-    print ("Hypotenuse: " + hypotenuse)
+    import math
+    hypotenuse = int(math.sqrt(base ** 2 + height ** 2))
+    print ("Hypotenuse: " + str(hypotenuse))
 
 def calculate_area(base, height):
-    area = (base * height)/2
-    print ("Area: " + area)
+    area = int((base * height)/2)
+    print ("Area: " + str(area))
 
 def calculate_perimeter(base, height):
-    perimeter = base + height + calculate_hypotenuse(base,height)
-    print ("Perimeter: " + perimeter)
+    perimeter = str(base) + str(height) + str(calculate_hypotenuse(base,height))
+    print ("Perimeter: " + str(perimeter))
 
 def calculate_aspect(base, height):
-    print ("Aspect: " + base + ":"+ height)
+    print ("Aspect: " + str(base) + ":"+ str(height))
 
 # Make sure you reuse the functions you've already got
 # Don't reinvent the wheel
@@ -135,7 +136,7 @@ def wordy_pyramid(api_key):
     )
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL.format(length=i)
+        url = baseURL.format(api_key=api_key,length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -143,7 +144,7 @@ def wordy_pyramid(api_key):
         else:
             print("failed a request", r.status_code, i)
     for i in range(20, 3, -2):
-        url = baseURL.format(length=i)
+        url = baseURL.format(api_key=api_key,length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -165,7 +166,7 @@ def get_a_word_of_length_n(length):
         "&maxLength={length}"
         "&limit=1" )
     
-    url = baseURL.format(length=length)
+    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=length)
     r = requests.get(url)
     if r.status_code is 200:
         message = r.json()[0]["word"]
@@ -176,9 +177,6 @@ def list_of_words_with_lengths(list_of_lengths):
     
     pyramid_list = []
 
-    #api_key = 
-    #Fill in!!!!
-
     baseURL = (
         "http://api.wordnik.com/v4/words.json/randomWords?"
         "api_key={api_key}"
@@ -186,7 +184,7 @@ def list_of_words_with_lengths(list_of_lengths):
         "&maxLength={length}"
         "&limit=10")
     
-    url = baseURL.format(length=list_of_lengths)
+    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=list_of_lengths)
     r = requests.get(url)
     if r.status_code is 200:
         message = r.json()[0]["word"]
@@ -195,5 +193,9 @@ def list_of_words_with_lengths(list_of_lengths):
 
 
 if __name__ == "__main__":
-    do_bunch_of_bad_things()
-    wordy_pyramid("yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo")
+    countdown("Ready in ", 10, 0, "Done!")
+    calculate_hypotenuse(3,4)
+    calculate_area (3,4)
+    calculate_perimeter (3,4)
+    calculate_aspect (3,4)
+    #wordy_pyramid("yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo")
