@@ -4,7 +4,7 @@
     "username_partner 2": "eesmero",
     "commit_me": "https://github.com/zzhKev1n/tf-pose-estimation/commit/cb750ce52d85743253d55d765beeddd27acdd183",
     "commit_partner 1": "https://github.com/<YOUR-GITHUB>/tf-pose-estimation/commit/<thecommitSHA>",
-    "commit_partner 2": "https://github.com/zzhKev1n/tf-pose-estimation/commit/46a69f90d25a9ff9135168c3a9b0b15bcfa9ffd1",
+    "commit_partner 2": "https://github.com/zzhKev1n/tf-pose-estimation/commit/50ab90cb51d60cac189c60a9d5ceb538bdc2ad52",
     "commit_coauthor": "https://github.com/<YOUR-GITHUB>/tf-pose-estimation/commit/<thecommitSHA>",
     "screenshot_me": "/path/to/your/screenshot.jpg",
     "screenshot_partner": "/path/to/partner/screenshot.jpg"
