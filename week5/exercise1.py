@@ -19,8 +19,8 @@ you'll need to figure out for yourself what to do.
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    for i in range(start,stop,-1):
-        print(message + str(i))
+    for i in range(start,stop-1,-1):
+        print(message + " " + str(i))
     print(completion_message)
 
 
@@ -115,8 +115,6 @@ def tell_me_about_this_right_triangle (facts_dictionary):
         "This is a {aspect} triangle.\n"
     )
 
-    facts = pattern.format(area=facts_dictionary['area'],units=facts_dictionary['units'],perimeter=facts_dictionary['perimeter'],aspect=facts_dictionary['aspect'])
-
     if facts_dictionary['height'] > facts_dictionary ['base']:
         return tall.format(height=facts_dictionary['height'], base=facts_dictionary ['base'],hypotenuse=facts_dictionary ['hypotenuse'])
     elif facts_dictionary['height'] < facts_dictionary ['base']:
@@ -126,11 +124,11 @@ def tell_me_about_this_right_triangle (facts_dictionary):
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
     if return_diagram and return_dictionary:
-        return 
+        return {"diagram": tell_me_about_this_right_triangle (get_triangle_facts(base, height)), "facts": get_triangle_facts(base, height)}
     elif return_diagram:
-        return tell_me_about_this_right_triangle
+        return tell_me_about_this_right_triangle (get_triangle_facts(base, height))
     elif return_dictionary:
-        return get_triangle_facts (base, height)
+        return get_triangle_facts(base, height)
     else:
         print("You're an odd one, you don't want anything!")
 
@@ -177,7 +175,7 @@ def get_a_word_of_length_n(length):
         "&maxLength={length}"
         "&limit=1" )
     
-    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=len(length))
+    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=length)
     r = requests.get(url)
     if r.status_code is 200:
         message = r.json()[0]["word"]
@@ -185,7 +183,8 @@ def get_a_word_of_length_n(length):
     return pyramid_list
 
 def list_of_words_with_lengths(list_of_lengths):
-    
+    import requests
+
     pyramid_list = []
 
     baseURL = (
@@ -204,11 +203,5 @@ def list_of_words_with_lengths(list_of_lengths):
 
 
 if __name__ == "__main__":
-    countdown("Ready in ", 10, 0, "Done!")
-    calculate_hypotenuse(10,3)
-    calculate_area (3,4)
-    calculate_perimeter (3,4)
-    calculate_aspect (3,4)
-    get_triangle_facts (3,4)
-    print (get_triangle_facts(3,4))
+    get_a_word_of_length_n(5)
     
