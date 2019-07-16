@@ -35,19 +35,24 @@ def countdown(message, start, stop, completion_message):
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
     import math
-    hypotenuse = int(math.sqrt(base ** 2 + height ** 2))
-    print ("Hypotenuse: " + str(hypotenuse))
+    hypotenuse = (math.sqrt((base ** 2) + (height ** 2)))
+    return hypotenuse
 
 def calculate_area(base, height):
-    area = int((base * height)/2)
-    print ("Area: " + str(area))
+    area = ((base * height)/2)
+    return area
 
 def calculate_perimeter(base, height):
-    perimeter = str(base) + str(height) + str(calculate_hypotenuse(base,height))
-    print ("Perimeter: " + str(perimeter))
+    perimeter = (base) + (height) + (calculate_hypotenuse(base,height))
+    return perimeter
 
 def calculate_aspect(base, height):
-    print ("Aspect: " + str(base) + ":"+ str(height))
+    if base > height:
+        return ("wide")
+    if base < height:
+        return ("tall")
+    else:
+        return ("equal")
 
 # Make sure you reuse the functions you've already got
 # Don't reinvent the wheel
@@ -79,7 +84,7 @@ def get_triangle_facts(base, height, units="mm"):
 #
 # but with the values and shape that relate to the specific
 # triangle we care about.
-def tell_me_about_this_right_triangle(facts_dictionary):
+def tell_me_about_this_right_triangle (facts_dictionary):
     tall = """
             {height}
             |
@@ -110,16 +115,22 @@ def tell_me_about_this_right_triangle(facts_dictionary):
         "This is a {aspect} triangle.\n"
     )
 
-    facts = pattern.format(**facts_dictionary)
+    facts = pattern.format(area=facts_dictionary['area'],units=facts_dictionary['units'],perimeter=facts_dictionary['perimeter'],aspect=facts_dictionary['aspect'])
 
+    if facts_dictionary['height'] > facts_dictionary ['base']:
+        return tall.format(height=facts_dictionary['height'], base=facts_dictionary ['base'],hypotenuse=facts_dictionary ['hypotenuse'])
+    elif facts_dictionary['height'] < facts_dictionary ['base']:
+        return wide.format(height=facts_dictionary['height'], base=facts_dictionary ['base'],hypotenuse=facts_dictionary ['hypotenuse'])
+    else:
+        return equal.format(height=facts_dictionary['height'], base=facts_dictionary ['base'],hypotenuse=facts_dictionary ['hypotenuse'])
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
     if return_diagram and return_dictionary:
-        return None
+        return 
     elif return_diagram:
-        return None
+        return tell_me_about_this_right_triangle
     elif return_dictionary:
-        return None
+        return get_triangle_facts (base, height)
     else:
         print("You're an odd one, you don't want anything!")
 
@@ -166,7 +177,7 @@ def get_a_word_of_length_n(length):
         "&maxLength={length}"
         "&limit=1" )
     
-    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=length)
+    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=len(length))
     r = requests.get(url)
     if r.status_code is 200:
         message = r.json()[0]["word"]
@@ -184,7 +195,7 @@ def list_of_words_with_lengths(list_of_lengths):
         "&maxLength={length}"
         "&limit=10")
     
-    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=list_of_lengths)
+    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=len(list_of_lengths))
     r = requests.get(url)
     if r.status_code is 200:
         message = r.json()[0]["word"]
@@ -194,8 +205,10 @@ def list_of_words_with_lengths(list_of_lengths):
 
 if __name__ == "__main__":
     countdown("Ready in ", 10, 0, "Done!")
-    calculate_hypotenuse(3,4)
+    calculate_hypotenuse(10,3)
     calculate_area (3,4)
     calculate_perimeter (3,4)
     calculate_aspect (3,4)
-    #wordy_pyramid("yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo")
+    get_triangle_facts (3,4)
+    print (get_triangle_facts(3,4))
+    
