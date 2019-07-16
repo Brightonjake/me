@@ -86,27 +86,34 @@ def wordy_pyramid():
     import time
 
     pyramid_list = []
-    for i in range(3, 21, 2):
+    i = 3
+    while True:
         url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo", length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
             pyramid_list.append(message)
-            time.sleep(5)
+            i = i + 2
+        elif i == 23:
+            break    
         else:
             print("failed a request", r.status_code, i)
-            time.sleep(5)
+            time.sleep(15)
     
-    for i in range(20, 3, -2):
-        url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=i)
+    i = 20
+    while True:
+        url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo", length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
             pyramid_list.append(message)
-            time.sleep(5)
+            i = i - 2
+        elif i == 1:
+            break    
         else:
             print("failed a request", r.status_code, i)
-            time.sleep(5)
+            time.sleep(15)
+
     return pyramid_list
 
 
@@ -165,8 +172,6 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    
-    #Read the file, search the string (string.split), find M10
 
     gcode_data= open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
     count = gcode_data.count("M10 P1")
