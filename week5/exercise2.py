@@ -91,7 +91,17 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
-    def apply_rules(letter, guard):
+
+    parts = list(source)
+    result = list(map(apply_rules, parts))
+    new_string = "".join(result)
+    guard -= 1
+    if guard > 0:
+        return abba(new_string, guard)
+    else:
+        return new_string
+
+def apply_rules(letter):
         """Control the substitution.
 
         You need to change these substitutions to make it work.
@@ -103,12 +113,9 @@ def abba(source="abba", guard=3):
         elif letter == "b":
             return "aob"
         elif letter == "o":
-            return "o" ?????????
+            return "oa" 
         else:
             return letter
-
-    # write the rest of the function here
-    pass
 
 
 def koch(t, order, size):
@@ -173,6 +180,6 @@ if __name__ == '__main__':
     print(draw_koch(drawing_method=square_koch, steps_deep=3))
     print(draw_koch(drawing_method=square_koch, steps_deep=4))
     print(draw_koch(drawing_method=koch, steps_deep=2))
-    print("AB:", abba())
+    print("AB:", str(abba()))
     print("ID:", str(italian_dinner()))
     pass
