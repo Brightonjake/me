@@ -133,57 +133,60 @@ def triangle_master(base, height, return_diagram=False, return_dictionary=False)
         print("You're an odd one, you don't want anything!")
 
 
-def wordy_pyramid(api_key):
+def wordy_pyramid():
     import requests
 
     baseURL = (
         "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
+        "api_key=yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo"
         "&minLength={length}"
         "&maxLength={length}"
         "&limit=1"
     )
     pyramid_list = []
-    for i in range(3, 21, 2):
-        url = baseURL.format(api_key=api_key,length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
-    for i in range(20, 3, -2):
-        url = baseURL.format(api_key=api_key,length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
+    
+    def word_pyramid_block (start, finish, step):
+        for i in range(start, finish, step):
+            url = baseURL.format (length=i)
+            r = requests.get(url)
+            if r.status_code is 200:
+                message = r.json()[0]["word"]
+                pyramid_list.append(message)
+            else:
+                print("failed a request", r.status_code, i)
+
+    word_pyramid_block (3, 9, 2)
+
     return pyramid_list
 
 
 def get_a_word_of_length_n(length):
     import requests
+    import time
 
     pyramid_list = []
 
     baseURL = (
         "http://api.wordnik.com/v4/words.json/randomWords?"
         "api_key={api_key}"
-        "&minLength={length}"
-        "&maxLength={length}"
-        "&limit=1" )
+        "&minLength={numberlength}"
+        "&maxLength={numberlength}"
+        "&limit=10" )
+
+    print (length)
     
-    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=length)
+    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",numberlength=(length))
+    print (url)
     r = requests.get(url)
     if r.status_code is 200:
         message = r.json()[0]["word"]
         pyramid_list.append(message)
+
     return pyramid_list
 
 def list_of_words_with_lengths(list_of_lengths):
     import requests
+    import time
 
     pyramid_list = []
 
@@ -192,16 +195,18 @@ def list_of_words_with_lengths(list_of_lengths):
         "api_key={api_key}"
         "&minLength={length}"
         "&maxLength={length}"
-        "&limit=10")
+        "&limit=1")
     
-    url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=len(list_of_lengths))
-    r = requests.get(url)
-    if r.status_code is 200:
-        message = r.json()[0]["word"]
-        pyramid_list.append(message)
+    for i in range(2):
+        url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=(list_of_lengths[i]))
+        r = requests.get(url)
+        if r.status_code is 200:
+            message = r.json()[0]["word"]
+            pyramid_list.append(message)
+
     return pyramid_list
 
 
 if __name__ == "__main__":
-    get_a_word_of_length_n(5)
+    get_a_word_of_length_n(fortune)
     
