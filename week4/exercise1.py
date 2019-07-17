@@ -88,17 +88,29 @@ def wordy_pyramid():
     pyramid_list = []
     i = 3
     while True:
-        url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo", length=i)
+        url = baseURL.format(key="zzy8yktfznwmqpqhz9a39s0rw6oqtvaf2yidiwi0h6vusd8sw",length=i)
+        time.sleep(1)
         r = requests.get(url)
+        time.sleep(1)
         if r.status_code is 200:
             message = r.json()[0]["word"]
             pyramid_list.append(message)
             i = i + 2
         elif i == 23:
-            break    
+            break   
         else:
             print("failed a request", r.status_code, i)
-            time.sleep(15)
+            time.sleep(5)
+            url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=i)
+            time.sleep(1)
+            r = requests.get(url)
+            if r.status_code is 200:
+                message = r.json()[0]["word"]
+                pyramid_list.append(message)
+                i = i + 2
+            else:
+                print("failed a request 2.0", r.status_code, i)
+                time.sleep(5)
     
     i = 20
     while True:

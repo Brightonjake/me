@@ -176,5 +176,5 @@ Define error
 #Take VScode help with a grain of salt
 
 Hash out
-#can hash out a whole paragraph of code by highlighting and pressing /
+#can hash out a whole paragraph of code by highlighting and pressing command /
 #can also add speech marks before and after instead
