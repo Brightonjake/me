@@ -136,38 +136,49 @@ def triangle_master(base, height, return_diagram=False, return_dictionary=False)
 def wordy_pyramid():
     import requests
 
-    baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key=yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo"
-        "&minLength={length}"
-        "&maxLength={length}"
-        "&limit=1"
-    )
-    pyramid_list = []
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
+    
+    wordlist = []
+    templist =[]
+    templist2 =[]
 
-    return pyramid_list
+    def refractor_WP(start,stop):
+        for i in range(start,stop+1):
+            fullurl=url.format(len=i)
+            pull = requests.get(fullurl)   
+            if pull.status_code is 200:         
+                randword = pull.content  
+                if randword is None: 
+                    pass
+                else:
+                    randword = str(randword)
+                    if int(i) % 2 ==0:
+                        templist2.append(randword[2:len(randword)-1])
+                    else:
+                        templist.append(randword[2:len(randword)-1])
+        templist2.reverse()
+        wordlist.extend(templist)
+        wordlist.extend(templist2)
 
-
-#My function
-def word_pyramid_block (start, finish, step):
-    for i in range(start, finish, step):
-        url = baseURL.format (length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
-
+    refractor_WP(3,20)    
+    return wordlist
 
 
 def get_a_word_of_length_n(length):
-    
-    pyramid_list = []
+    import requests
 
-    word_pyramid_block (int(length), int(length), 1)
-
-    return pyramid_list
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={leng}"
+    if type(length) == int and length >= 3:
+        fullurl=url.format(leng=length)
+        pull = requests.get(fullurl)   
+        if pull.status_code is 200:         
+            wordn = pull.content  
+            wordn = str(wordn)
+            outputword = wordn[2:len(wordn)-1]
+                #    this retrives the word from the url
+        return outputword
+    else:
+        return None
 
 def list_of_words_with_lengths(list_of_lengths):
     import requests
@@ -193,5 +204,6 @@ def list_of_words_with_lengths(list_of_lengths):
 
 
 if __name__ == "__main__":
-    get_a_word_of_length_n("fortune")
+    get_a_word_of_length_n(5)
+    wordy_pyramid()
     
