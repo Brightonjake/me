@@ -1,23 +1,28 @@
 import pandas as pd
+import os
 
-File_list = ["Kensington_NSW", "Kingsford", "Mascot_Eastlakes", 
-"Paddington_MoorePark", "RandwickNorth","RandwickSouth", "Waterloo_Beaconsfield"]
+path = 'week7/Data/'
+files = []
+# r=root, d=directories, f = files
+for r, d, f in os.walk(path):
+    for file in f:
+        if '.txt' in file:
+            files.append(os.path.join(r, file))
+#Create list of all the files in the directory        
 
 temp_table= pd.DataFrame()
 
-for i in File_list: 
-    file_path="week7/Data/{area}.csv".format(area=i)
-    read_file = pd.read_csv(file_path)
+for f in files: 
+    read_file = pd.read_csv(f)
     #Reads different file for each iteration
 
-    search_criteria = read_file['Description']== "Homeless rate per 10,000 persons"
     new_info = read_file[search_criteria]
     #Searches the file and obtains rows with certain characteristic
 
     new_info = new_info.reset_index(drop=True)
     #deletes index column
-
-    new_column = [i,i]
+ 
+    new_column = [f,f]
     new_info['Area'] = new_column
     #Adds new column with area name
 
