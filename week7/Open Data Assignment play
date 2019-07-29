@@ -1,0 +1,5 @@
+import pandas as pd
+
+data = pd.read_csv("week7/Kensington_NSW.csv")
+
+print (data(data["Description"] == "Persons earning nil income (%)"))
