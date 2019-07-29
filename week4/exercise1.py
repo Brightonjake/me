@@ -82,51 +82,39 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
 
-    baseURL = ("http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={length}&maxLength={length}&limit=1")
-    import time
+    import requests
 
-    pyramid_list = []
-    i = 3
-    while True:
-        url = baseURL.format(key="zzy8yktfznwmqpqhz9a39s0rw6oqtvaf2yidiwi0h6vusd8sw",length=i)
-        time.sleep(1)
-        r = requests.get(url)
-        time.sleep(1)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-            i = i + 2
-        elif i == 23:
-            break   
-        else:
-            print("failed a request", r.status_code, i)
-            time.sleep(5)
-            url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=i)
-            time.sleep(1)
-            r = requests.get(url)
-            if r.status_code is 200:
-                message = r.json()[0]["word"]
-                pyramid_list.append(message)
-                i = i + 2
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
+    mino = 3
+    maxo = 20
+    wordlist = []
+    templist =[]
+    templist2 =[]
+    for i in range(mino,maxo+1):
+        fullurl=url.format(len=i)
+        pull = requests.get(fullurl)   
+        if pull.status_code is 200:         
+            randword = pull.content  
+                #    this retrives the word from the url
+            if randword is None: 
+                pass
             else:
-                print("failed a request 2.0", r.status_code, i)
-                time.sleep(5)
-    
-    i = 20
-    while True:
-        url = baseURL.format(key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo", length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-            i = i - 2
-        elif i == 1:
-            break    
-        else:
-            print("failed a request", r.status_code, i)
-            time.sleep(15)
-
-    return pyramid_list
+                randword = str(randword)
+                # below checks if the word will have odd or even 
+                # no. of characters. Then it sorts them into 
+                # separate lists
+                if int(i) % 2 ==0:
+                    templist2.append(randword[2:len(randword)-1])
+                    #  issue with words from this url is that
+                    #  they look like --> b'word' 
+                    #  so i've applied the range filter as seen above
+                    #  and below so to ignore the b' and '
+                else:
+                    templist.append(randword[2:len(randword)-1])
+    templist2.reverse()
+    wordlist.extend(templist)
+    wordlist.extend(templist2)
+    return wordlist
 
 
 def pokedex(low=1, high=5):
