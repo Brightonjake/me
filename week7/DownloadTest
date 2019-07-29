@@ -1,0 +1,772 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang=en>
+    <head>
+        <title>Randwick - North : Region Data Summary</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <META NAME="DC.Date.modified" SCHEME="ISO8601" CONTENT="2018-06-29">
+        <META NAME="DC.Coverage.jurisdiction" CONTENT="Commonwealth of Australia">
+        <META NAME="DC.Coverage.spatial" CONTENT="Australia">
+        <META NAME="AGLS.Function" SCHEME="AGIFT" CONTENT="No Function Set">
+        <META NAME="DC.Title" CONTENT="Australian Bureau of Statistics web site">
+        <META NAME="DC.Language" SCHEME="RFC3066" CONTENT="en">
+        <META NAME="DC.Rights" CONTENT="© Commonwealth of Australia, 2018">
+        <META NAME="DC.Creator" SCHEME="GOLD" CONTENT="c=AU; o=Commonwealth of Australia; ou=Australian Bureau of Statistics">
+        <META NAME="DC.Publisher" SCHEME="GOLD" CONTENT="c=AU; o=Commonwealth of Australia; ou=Australian Bureau of Statistics">
+        <META NAME="DC.Description" CONTENT="No Description Provided">
+        <META NAME="DC.Subject" SCHEME="ABS Classifications" CONTENT="No Subject">
+        <META NAME="DC.Type.category" CONTENT="document">
+        <META NAME="DC.Type.aggregationLevel" CONTENT="collection">
+        <META NAME="DC.Type.documentType" SCHEME="agls-document" CONTENT="document">
+        <META NAME="DC.Availability" CONTENT="corporate name:Australian Bureau of Statistics; address:PO Box 10 Belconnen ACT 2616; contact:National Information Referral Service; email:client.services@abs.gov.au; telephone:1300 135 070">
+        <META NAME="DC.Relation.IsPartOf" CONTENT="Data by Region / Title">
+        <META NAME="DC.Audience.Mediator" CONTENT="mn">
+        <META NAME="DC.Identifier" SCHEME="URI" CONTENT="%2Fausstats%2Ftemplates.nsf%2Fnew%2Bgmappages%2Fblank">
+        <meta name="google-site-verification" content="ez688oD764azEyk2KiQZuYy7VBpf008spYWHn5ikOdI">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        
+        <link rel="stylesheet" href="https://www.abs.gov.au/ausstats/wmdata.nsf/stylesheetscurrent/print_page.css/$File/print_page.css" type="text/css" media="print"><link rel="stylesheet" href="https://www.abs.gov.au/ausstats/wmdata.nsf/stylesheetscurrent/zabs_website.css/$File/zabs_website.css" type="text/css" media="Screen">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://js.arcgis.com/3.25/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/nrp.css" type="text/css">
+	<link rel="stylesheet" href="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/esri.css" type="text/css">
+        <link rel="stylesheet" href="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/jquery-ui.min.css" type="text/css">
+        
+        <!--[if lt IE 9]>
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/html5shiv.min.js"></script>
+        <style>
+        #nrpMapSection{
+        	width:35%;
+        }
+        header,nav,article,footer,section,aside,figure,figcaption{
+        	display:block
+        }
+        .nrpTemplateTableHeader, .censusTableHeader {
+        	font-size: 8pt;
+        	/*padding:15px 0;
+        	border-bottom:1px solid grey;
+        	border-top:1px solid grey;*/
+        }
+        </style>
+        <![endif]-->
+        <script type="text/javascript" src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/scrollmagic.js"></script>
+        <script src="resources/js/simple-statistics-master/src/simple_statistics.js"></script>
+        <script type="text/javascript">var djConfig = {parseOnLoad: true};</script>
+        <script type="text/javascript" src="https://js.arcgis.com/3.25/dojo/dojo.js"></script>
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/ie_shim.js"></script>
+        <![endif]-->
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/mds.js"></script>
+        <script>var dojoConfig = {parseOnLoad: true};</script>
+        <script src="js/pages.js"></script>
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/nrpTemplate.js"></script>
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/rTemplate.js"></script>
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/datacodes.js"></script>
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/populateTables.js"></script>
+        <script src="https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/cleanup.js"></script>
+        
+        
+        
+        
+        <script src="https://abs.gov.au/ausstats/wmdata.nsf/activejavascripts/amenuScript/$File/amenuScript.js"></script>
+        
+        <script>
+        	dojo.ready(function() {
+        		nrpInit.init_nrpTemplate( {region:"118021569", geoConcept:"ASGS_2016", dataset:"ABS_REGIONAL_ASGS2016", 
+        			parentCode:"11802", regionName:"Randwick - North",
+        			mapLayerId:"#maplayerid#", appsFolder:"https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/", measure:"MEASURE", 
+        			datasetLGA:"ABS_REGIONAL_LGA2018", regionLGA: "LGA_2018", 
+        			datasetASGS: "ABS_REGIONAL_ASGS2016", regionASGS:"ASGS_2016",page:"RegionSummary"} );
+        	});
+        	$(document).ready(function($) {
+        		populateTables.init("ABS_REGIONAL_ASGS2016", "ASGS_2016", "118021569", "MEASURE", "2013,2014,2015,2016,2017,2018", "2011,2016");
+        		populateTables.load(["POP", "ECON", "INC", "EDU", "HEAL", "FAM", "MIG", "ENV"]);
+        		cleanup.run();
+        		setPins();
+        	});
+        </script>
+        
+        <script>
+        	$(document).keypress(function (e) {
+        		nrpInit.handleKeyPress(e.which);
+        	});
+        </script>
+        
+        
+        
+    </head>
+    <body>
+    	<script type='text/javascript' src='/ausstats/wmdata.nsf/activejavascripts/GoogleTagMgr/$File/GoogleTagMgr.js'></script><noscript><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-WSG6NHM' height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
+        
+        <!-- Start SkinPre --><!-- Google Tag Manager disabled -->
+<!-- Google Tag Manager (noscript) disabled --><!-- Start Header--><div id="skipLink"><a href="#mainContent" title="Skip to main content"  class="skipLink">Skip to main content</a></div><!--[if lt IE 9]><div id="betaBanner"><div class="betaLink"><p class="betaText"><span class="hidden">Disclaimer: </span>It looks like you're using an old version of Internet Explorer. For the best experience, please update your browser.</p></div></div><![endif]--><div class="sitewrapper"><div id="headerNew" role="banner" class="group"><div id="headerWrapper"><!--[if lt IE 9]><div id="ieLogo"><![endif]--><div id="ABSlogo"><a title="Australian Bureau of Statistics Home" href="https://www.abs.gov.au/"><img class="logo" src="https://www.abs.gov.au/ausstats/wmdata.nsf/activeotherresource/ABS_Logo_333/$File/ABS_Logo_333.svg" alt="ABS logo"><span class="hidden">Australian Bureau of Statistics</span></a></div><!--[if lt IE 9]></div><![endif]--><!-- Start Search Bar --><div class="searchBar" ><form method="get" action="https://search.abs.gov.au/s/search.html" id="input" class="searchForm" name="searchForm" autocomplete="off" role="search">
+<label for="query" class="searchLabel hidden">Search for:</label>
+<input type="text" name="query" id="query"  size="40" onfocus="this.value = this.value == this.defaultValue? '' : this.value;" onblur="this.value = this.value || this.defaultValue;" />
+<input type="hidden" name="collection" id="NScollection" value="abs">
+<input type="hidden" name="form" id="NSformType" value="simple">
+<input type="hidden" name="profile" id="NSprofile" value="_default">
+<label for="query" class="searchLabel hidden">Submit search query:</label>
+<input type="submit" value="Search" id="NSsubmit">
+</form></div><!-- End Search Bar --><!-- End Header--></div><!-- end headerWrapper--></div><!--end header--><!-- Start Top Global Navigator--><!--[if lt IE 9]><div id="ieNav"><![endif]--><div class="header">
+	<div class="nav-head-container">
+		
+		<a class="mobile-nav" href="#open-menu">
+			<div class="top"></div>
+			<div class="middle"></div>
+			<div class="bottom"></div>
+			MENU
+		</a>
+		<!-- Global menu links -->
+		<div class="top-nav">
+			<div class="block-menu-block" role="navigation">
+				<ul class="menu"><li><a href="https://www.abs.gov.au/browse?opendocument&amp;ref=topBar" >Statistics</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Census?OpenDocument&ref=topBar">Census</a></li>
+<li><a href="https://www.abs.gov.au/Portal/#ABSSurveyAccount">Complete your survey</a></li>
+<li><a href="https://www.abs.gov.au/about?OpenDocument&ref=topBar">About us</a></li></ul></div></div></div></div><!--[if lt IE 9]></div><![endif]--><!-- End Top Global Navigator--><div id="crumb"><span id=breadcrumb></span></div><div id="mainContent" role="main" tabindex="-1"><!-- End SkinPre -->
+        
+    	<div id='nrpBodyContents' class='claro'>
+    		<div id='mainContents' class='claro'>
+				<h1>
+				<!--2013 - 2018 -->
+				Randwick - North (<span id='geography'></span>) (<span id='regionCode'>118021569</span>)
+				</h1>
+				
+					<div id='nrpTemplateQuickStats'>
+						<div id="nrpTemplateQuickStatsData">
+							<div id='regionNameBox'>
+								<h4 id='regionHierarchy'>&nbsp;</h4>
+							</div>
+							<table id='quickStatsTable'>
+								<thead>
+									<tr>
+										<th colspan="2">&nbsp;</th>
+										<th>Year</th>
+										<th>Randwick - North</th>
+										<th>Australia</th>
+									</tr>
+									<tr>
+										<th class="donthide" colspan="5"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td rowspan='2' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Population_People_Icon.png' title='Population & People'
+											alt='Population & People icon' /><a
+											href="javascript:nrpInit.showInformationPanel('population');"
+											onclick="showIt('population');" title="View more on Population & People"><h4>Population &amp; People</h4></a></td>
+										<td>Persons (no.)</td>
+										<td>2018</td>
+										<td>18,045</td>
+										<td>24,992,860</td>
+									</tr>
+									<tr>
+										<td>Working Age Population (aged 15-64 years) (%)</td>
+										<td>2017</td>
+										<td>71.3</td>
+										<td>65.7</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="4"></td>
+									</tr>
+									<tr>
+										<td rowspan='2' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Economy_Industry_Icon.jpg' title='Economy & Industry'
+											alt='Economy & Industry icon' /><a
+											href="javascript:nrpInit.showInformationPanel('economy');"
+											onclick="showIt('economy');" title="View more on Economy & Industry"><h4>Economy &amp; Industry</h4></a></td>
+										<td>Total number of businesses (no.)</td>
+										<td>2018</td>
+										<td>1,693</td>
+										<td>2,313,291</td>
+									</tr>
+									<tr>
+										<td>Main employing industry:<br><span id='dataMainEmployingType'></span></td>
+										<td><span id='dataMainEmployingTime'></span></td>
+										<td><span id='dataMainEmployingValue'></span></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td rowspan='2' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Income_Icon.gif' title='Income'
+											alt='Income icon' /><a
+											href="javascript:nrpInit.showInformationPanel('income');"
+											onclick="showIt('income');" title="View more on Income"><h4>Income</h4></a></td>
+										<td>Median equivalised total household income (weekly) ($)</td>
+										<td>2016</td>
+										<td>1,488</td>
+										<td>877</td>
+									</tr>
+									<tr>
+										<td>Median total income (excl. Government pensions and allowance) ($)</td>
+										<td>2016</td>
+										<td>66,065</td>
+										<td>47,692</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td rowspan='2' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Education_Employment_Icon.gif' title='Education & Employment'
+											alt='Education & Employment Icon' /><a
+											href="javascript:nrpInit.showInformationPanel('education');"
+											onclick="showIt('education');" title="View more on Education & Employment"><h4>Education &amp; Employment</h4></a></td>
+										<td>Proportion completed Year 12 or equivalent - total population aged 15 years and over (%)</td>
+										<td>2016</td>
+										<td>75.1</td>
+										<td>51.9</td>
+									</tr>
+									<tr>
+										<td>Unemployment rate (%)</td>
+										<td>2016</td>
+										<td>3.8</td>
+										<td>6.9</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td rowspan='1' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Health_Disability_Icon.gif' title='Health & Disability'
+											alt='Health & Disability icon' /><a
+											href="javascript:nrpInit.showInformationPanel('health');"
+											onclick="showIt('health');" title="View more on Health & Disability"><h4>Health &amp; Disability</h4></a></td>
+										<td>Persons who have need for assistance with core activities (%)</td>
+										<td>2016</td>
+										<td>3.8</td>
+										<td>5.1</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td rowspan='3' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Family_Community_Icon.gif' title='Family & Community'
+											alt='Family & Community icon' /><a
+											href="javascript:nrpInit.showInformationPanel('family');"
+											onclick="showIt('family');" title="View more on Family & Community"><h4>Family &amp; Community</h4></a></td>
+										<td>Average household size (no. of persons)</td>
+										<td>2016</td>
+										<td>2.3</td>
+										<td>2.6</td>
+									</tr>
+									<tr>
+										<td>Average monthly household rental payment ($)</td>
+										<td>2016</td>
+										<td>2,465</td>
+										<td>1,524</td>
+									</tr>
+									<tr>
+										<td>Average monthly household mortgage payment ($)</td>
+										<td>2016</td>
+										<td>2,780</td>
+										<td>1,958</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td rowspan='2' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Population_People_Icon.png'
+											title='Persons Born Overseas' alt='Persons Born Overseas icon' /><a
+											href="javascript:nrpInit.showInformationPanel('migrant');"
+											onClick="showIt('migrant');"
+											title="View more on Persons Born Overseas"><h4>Persons Born Overseas</h4></a></td>
+										<td>Total Population (no.)</td>
+										<td>2016</td>
+										<td>6,434</td>
+										<td>6,149,388</td>
+									</tr>
+									<tr>
+										<td>Proficient in English (%)</td>
+										<td>2016</td>
+										<td>95.5</td>
+										<td>88.7</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td class="donthide" colspan="5"></td>
+									</tr>
+									<tr>
+										<td rowspan='2' align="center" class="iconLinks"><img
+											src='https://www.ausstats.abs.gov.au/ausstats/templates.nsf/Pages/RegionSummary/$File/Land_Environment_Icon.jpg'
+											title='Land & Environment' alt='Land & Environment icon' /><a
+											href="javascript:nrpInit.showInformationPanel('environment');"
+											onClick="showIt('environment');"
+											title="View more on Land & Environment"><h4>Land
+													&amp; Environment</h4></a></td>
+										<td>Land area (ha)</td>
+										<td>2018</td>
+										<td>193.6</td>
+										<td>768,812,631.9</td>
+									</tr>
+									<tr>
+										<td>Small-scale solar panel system installations 2001-2016 (no.)</td>
+										<td>2017</td>
+										<td>202</td>
+										<td>1,815,621</td>
+									</tr>
+									<tr>
+										<td class="rowrule donthide" colspan="5"></td>
+									</tr>
+								</tbody>
+	
+							</table>
+						</div>
+					</div>
+					
+					<div id='nrpMapSection'>
+						<div class="searchBox">
+							<a href="https://itt.abs.gov.au/itt/r.jsp?databyregion">Go back to main map</a>
+						</div>
+						<div class="rTemplateMap" id='map' data-rTemplate-chart-data='mapData' data-rTemplate-chart-layer='' data-rTemplate-map-title='Map of Randwick - North' title="Map of Randwick - North">
+						</div>
+						<div id='mapData' style='display:none'>
+						</div>
+	
+					</div>
+					<h3 id='mapStatus'></h3>
+					
+					
+					<br style='clear: both'>
+	
+					<div class="main">
+						<div id='nrpContent'>
+							<div class="screenreaderonly">Each of the sections below is
+								expandable. Select once (click with mouse or press the letter
+								key P for Population &amp; People, C for Economy &amp; Industry,
+								I for Income (including Government Allowances), E for Education
+								&amp; Employment, F for Family &amp; Community, A for Land &amp;
+								Environment, R for Related Regions, D for Download the statistics
+								or L for Links) to expand the section and display the content.
+								Select again to collapse the section and hide the content.</div>
+							
+							<p>Click on the following category headings to view
+								2013 - 2018 statistics about Randwick - North.</p>
+							
+							<div id='expandAll' expanded='false'>
+								<a
+									onclick='nrpInit.selectAllPanels(["population", "economy", "income", "education", "health", "family", "migrant", "environment"]);'>
+									<span class='expandAllText'>Expand all data tables</span>
+								</a>
+							</div>
+							
+							<div id='population' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading' >
+									<a
+										href="javascript:showIt('population');"
+										onclick='nrpInit.showHideInformationPanels("population");'									
+										onkeyPress='nrpInit.showHideInformationPanels("population"); showIt("population");'
+										accesskey='P' tabindex='1' title='Population & People category'><span class='icon-panel'></span>
+										<span class='secondLetterUnderline'>P</span>opulation &amp; People
+										<span class="panelDesc">includes Population, Population Density, Citizenship</span></a>
+								</div>
+								<div class='nrpPanelTable triggerPop'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerPopCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+
+							<div id='economy' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+									<a
+										href="javascript:showIt('economy');"
+										onclick='nrpInit.showHideInformationPanels("economy");'
+										onkeyPress='nrpInit.showHideInformationPanels("economy"); showIt("economy");'
+										accesskey='C' tabindex='2' title='Economy & Industry category'><span class='icon-panel'></span>
+										E<span class='secondLetterUnderline'>c</span>onomy &amp; Industry
+										<span class="panelDesc">includes Businesses, Building Approvals, Registered Motor Vehicles</span></a>
+								</div>
+								<div class='nrpPanelTable triggerEco'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerEcoCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+	
+							<div id='income' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+									<a
+										href="javascript:showIt('income');"
+										onClick='nrpInit.showHideInformationPanels("income");'
+										onkeyPress='nrpInit.showHideInformationPanels("income"); showIt("income");'
+										accesskey='I' tabindex='3' title='Income category'><span class='icon-panel'></span>
+										<span class='secondLetterUnderline'>I</span>ncome (including Government Allowances)
+										<span class="panelDesc">includes Personal Income, Pensions</span></a>
+								</div>
+								<div class='nrpPanelTable triggerInc'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerIncCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+	
+							<div id='education' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+									<a
+										href="javascript:showIt('education');"
+										onClick='nrpInit.showHideInformationPanels("education");'
+										onkeyPress='nrpInit.showHideInformationPanels("education"); showIt("education");'
+										accesskey='E' tabindex='4' title='Education and Employment category'><span class='icon-panel'></span>
+										<span class='secondLetterUnderline'>E</span>ducation &amp; Employment
+										<span class="panelDesc">includes Preschool Enrolments, Post-School Qualifications, Occupations</span></a>
+								</div>
+								<div class='nrpPanelTable triggerEdu'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerEduCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+	
+							<div id='health' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+									<a
+										href="javascript:showIt('health');"
+										onClick='nrpInit.showHideInformationPanels("health");'
+										onkeyPress='nrpInit.showHideInformationPanels("health"); showIt("health");'
+										accesskey='H' tabindex='5' title='Health & Disability category'><span class='icon-panel'></span>
+										<span class='secondLetterUnderline'>H</span>ealth &amp; Disability
+										<span class="panelDesc">includes Disability Estimates</span></a>
+								</div>
+								<div class='nrpPanelTable triggerHea'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerHeaCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+	
+							<div id='family' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+									<a
+										href="javascript:showIt('family');"
+										onClick='nrpInit.showHideInformationPanels("family");'
+										onkeyPress='nrpInit.showHideInformationPanels("family"); showIt("family");'
+										accesskey='F' tabindex='6' title='Family & Community category'><span class='icon-panel'></span>
+										<span class='secondLetterUnderline'>F</span>amily &amp; Community
+										<span class="panelDesc">includes Unpaid Work, Households, Internet Access</span></a>
+								</div>
+								<div class='nrpPanelTable triggerFam'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerFamCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+	
+							<div id='migrant' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+							                <a
+							                       href="javascript:showIt('migrant');"
+							                       onClick='nrpInit.showHideInformationPanels("migrant");'
+							                       onkeyPress='nrpInit.showHideInformationPanels("migrant"); showIt("migrant");'
+							                       accesskey='S' tabindex='7' title='Persons Born Overseas category'><span class='icon-panel'></span>
+							                       Per<span class='secondLetterUnderline'>s</span>ons Born Overseas
+							                       <span class="panelDesc">includes Year of Arrival, Qualifications, Occupation</span></a>
+						                </div>
+						                <div class='nrpPanelTable triggerMigs'>									
+						                </div>
+								<div class='nrpPanelTable triggerMigCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+                
+					                </div>
+  
+							<div id='environment' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading'>
+									<a
+										href="javascript:showIt('environment');"
+										onClick='nrpInit.showHideInformationPanels("environment");'
+										onkeyPress='nrpInit.showHideInformationPanels("environment"); showIt("environment");'
+										accesskey='A' tabindex='8' title='Land & Environment category'><span class='icon-panel'></span>
+										L<span class='secondLetterUnderline'>a</span>nd &amp; Environment
+										<span class="panelDesc">includes Land Area, Water Use, Solar Installations</span></a>
+								</div>
+								<div class='nrpPanelTable triggerEnv'>
+									<table class='nrpTemplateTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th></tr></table>
+								</div>
+								<div class='nrpPanelTable triggerEnvCen'>
+									<table class='censusTableHeader'><tr><th>Data Item</th><th>&nbsp;</th><th>2011</th><th>2016</th></tr></table>
+								</div>
+							</div>
+							
+							<br /> <br />
+							<div id='related' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading noBorder'>
+									<a
+										href="javascript:showIt('related');"
+										onClick='nrpInit.showHideInformationPanels("related");'
+										onkeyPress='nrpInit.showHideInformationPanels("related"); showIt("related");'
+										accesskey='R' tabindex='9' title='Related Regions category'
+										class='firstLetterUnderline'><span class='icon-panel'>
+										</span>Related Regions</a> <br>
+								</div>
+								<div class='nrpPanelTable'>
+									<!--<div id='related'>-->
+										<h3>Related Areas</h3>
+										<div id='relatedParent'>
+											<p>Randwick - North is contained within the following area:</p>
+											
+											<a
+												href="r.jsp?RegionSummary&region=11802&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+												Eastern Suburbs - South </a>
+											
+										</div>
+										<div id='relatedSiblings'>
+											<p>Randwick - North is in the same geography as the following
+												areas:</p>
+											<ul>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021348&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Coogee - Clovelly </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021350&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Malabar - La Perouse - Chifley </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021564&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Kensington (NSW) </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021565&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Kingsford </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021566&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Maroubra - North </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021567&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Maroubra - South </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021568&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Maroubra - West </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021569&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Randwick - North </a></li>
+												
+												<li><a
+													href="r.jsp?RegionSummary&region=118021570&dataset=ABS_REGIONAL_ASGS2016&geoconcept=ASGS_2016&datasetASGS=ABS_REGIONAL_ASGS2016&datasetLGA=ABS_REGIONAL_LGA2018&regionLGA=LGA_2018&regionASGS=ASGS_2016">
+														Randwick - South </a></li>
+												
+											</ul>
+										</div>
+										<div id='relatedChildrenDiv'>
+											<p>Randwick - North is divided into the following:</p>
+											<ul id='relatedChildren'>
+												
+											</ul>
+										</div>
+								</div>
+							</div>
+							<div id='download' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading noBorder'>
+									<a
+										href="javascript:showIt('download');"
+										onClick='nrpInit.showHideInformationPanels("download");'
+										onkeyPress='nrpInit.showHideInformationPanels("download"); showIt("download");'
+										accesskey='D' tabindex='10' title='Download category'
+										class='firstLetterUnderline'><span class='icon-panel'></span>
+										Download the statistics</a>
+									<br>
+								</div>
+								<div class='nrpPanelTable'>
+									<!--<div id='download'>-->
+										<h3>Download the Region Profile for Randwick - North</h3>
+										<a
+											href="query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&or=MEASURE&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&periods=2013,2014,2015,2016,2017,2018&format=excel&order=original&filename=Randwick - North&extra=Randwick - North+118021569,1379.0.55.001"><span
+											class='icon-excel'></span> Excel (.xls 250 KB)</a> <br /> <a
+											href="query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&or=MEASURE&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&periods=2013,2014,2015,2016,2017,2018&format=csv&order=original&filename=Randwick - North"><span
+											class='icon-csv'></span> CSV (90 KB)</a>
+								</div>
+							</div>
+							<div id='links' class='nrpTemplatePanel'>
+								<div class='nrpPanelHeading noBorder'>
+									<a
+										href="javascript:showIt('links');"
+										onClick='nrpInit.showHideInformationPanels("links");'
+										onkeyPress='nrpInit.showHideInformationPanels("links"); showIt("links");'
+										accesskey='L' tabindex='11' title='Links category'
+										class='firstLetterUnderline'><span class='icon-panel'></span>
+										Links</a>
+									<br>
+								</div>
+								<div class='nrpPanelTable'>
+									<p>The following links provide further information about these statistics:</p>
+									<a href="https://www.abs.gov.au/ausstats/abs@.nsf/mf/1410.0" target="_blank" rel="noopener noreferrer">Data for all regions</a><br /> 
+									<a href="https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/1410.0Explanatory%20Notes22013-18" target="_blank" rel="noopener noreferrer">List of Data Items</a><br /> 
+									<a href="https://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1410.0Explanatory%20Notes12013-18" target="_blank" rel="noopener noreferrer">Explanatory Notes</a><br /> 
+									<a href="https://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1410.0Glossary42013-18?opendocument&tabname=Notes&prodno=1410.0&issue=2013-18&num=&view=" target="_blank" rel="noopener noreferrer">Glossary</a><br /> 
+									<a href="https://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1410.0Abbreviations52013-18?opendocument&tabname=Notes&prodno=1410.0&issue=2013-18&num=&view=" target="_blank" rel="noopener noreferrer">Abbreviations</a><br />
+									<a href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/second+level+view?ReadForm&prodno=1410.0&viewtitle=Data%20by%20Region~2013-18~Latest~17/05/2019&&tabname=Past%20Future%20Issues&prodno=1410.0&issue=2013-18&num=&view=&" target="_blank" rel="noopener noreferrer">Past Releases</a>
+								</div>
+								<br />
+							</div>
+							
+						<p class="abstract">
+							Data by Region presents a range of data for all of Australia.
+							Data are available for Local Government Areas, Statistical Areas Levels 2 - 4, Greater Capital Cities, States and Australia.
+							Data by Region is intended for users interested in the characteristics of regions and in comparing regions across Australia.
+							Data are in a time series, where available.
+						</p>
+						<div id='message'></div>
+						<br style='clear: both'>
+						<div id="releaseInfo">
+							Data last updated: <strong>2019-07-05T11:30+10:00</strong>
+							<br /> <br>
+							<h4>
+								Would you like more functionality, or to create your own data
+								sets? Find more data with <a
+									href="http://stat.data.abs.gov.au/index.aspx" target="_blank" rel="noopener noreferrer">ABS.Stat</a>
+							</h4>
+	
+						</div>
+						<br style='clear: both'>
+					</div>
+					<div id="pageDate">
+						This page was created <em id="dateNow"></em> sourcing from <a
+							href="http://stat.data.abs.gov.au/index.aspx" target="_blank" rel="noopener noreferrer">ABS.Stat</a>.
+					</div>
+    		</div>
+    	</div>
+    
+    	<!-- #mainContents -->
+    	<!-- these are the restful queries used to produce this page -->
+    	<div id='queries_used' style='display: none'><!--
+Queries Used
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.LAND&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.TOTMIG_4&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.ERP_P_20&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.ERP_18&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetTimePeriod&endYear=2018&totalYears=6&format=list&datasetid=ABS_REGIONAL_ASGS2016
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ACTIV_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.LAND&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetTimePeriod&endYear=2018&totalYears=6&format=timeFrame&datasetid=ABS_REGIONAL_ASGS2016
+https://itt.abs.gov.au/itt/query.jsp?method=GetTimePeriod&endYear=2018&totalYears=6&format=tableHeader&datasetid=ABS_REGIONAL_ASGS2016
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.CABEE_5&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.EQUIV_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.SOLAR_2&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetCodeListValue&datasetid=ABS_REGIONAL_ASGS2016&concept=ASGS_2016&code=118021569&relationship=children
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.RENT_3&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.INCOME_17&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ACTIV_2&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.CABEE_5&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.RENT_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.TOTMIG_4&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.TOTMIG_4&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.LAND&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ERP_P_20&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.HHTYPE_6&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetCodeListValue&datasetid=ABS_REGIONAL_ASGS2016&concept=ASGS_2016&code=118021569&relationship=parent
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.LF_4&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.SOLAR_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ENGMIG_2&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.RENT_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.CABEE_5&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ERP_18&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.RENT_3&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.ENGMIG_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.RENT_2&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.LF_4&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.HHTYPE_6&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ERP_18&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.EQUIV_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetCodeListValue&datasetid=ABS_REGIONAL_ASGS2016&concept=ASGS_2016&code=118021569
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.INCOME_17&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.ACTIV_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.HIGH_2&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.HHTYPE_6&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.HIGH_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.INCOME_17&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ENGMIG_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&nodata=No+Data+Available&or=MEASURE.HIGH_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.LF_4&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.RENT_3&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetMetaDataValue&datasetid=ABS_REGIONAL_ASGS2016&id=Date+last+updated
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.0,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.SOLAR_2&format=latest&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetCodeListValue&datasetid=ABS_REGIONAL_ASGS2016&concept=ASGS_2016&code=11802&relationship=children
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.ERP_P_20&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetGenericData&datasetid=ABS_REGIONAL_ASGS2016&and=ASGS_2016.118021569,FREQUENCY.A&TIME_FORMAT=P1Y&start=2000&or=MEASURE.EQUIV_2&format=latestTime&nf=2
+https://itt.abs.gov.au/itt/query.jsp?method=GetCodeListValue&datasetid=ABS_REGIONAL_ASGS2016&concept=ASGS_2016&code=118021569&relationship=parentCode
+--></div>
+      
+        <!-- start WS SkinPost_Beta --></tr></table></div></div><!-- closes mainContent--><!-- --><!-- Start Document History --><div id="copyright">This page last updated 12 July 2019</div><!-- End Document History --><div id="theFooter" class="group" role="footer"><div id="footerWrap">	<div id="colomnOne" class="grid_2">	<!--p class="ftHeader">Explore and use...</p--><ul><li><a href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/webpages/Upcoming+releases" >Upcoming releases</a></li>
+<li><a href="http://stat.data.abs.gov.au/" >ABS.Stat (Beta)</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/d3310114.nsf/home/Consumer+Price+Index+Inflation+Calculator" >CPI inflation calculator</a></li>
+<li><a href="https://itt.abs.gov.au/itt/r.jsp?databyregion" >Data by region</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Microdata+Entry+Page" >Microdata access</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/About+TableBuilder" >TableBuilder</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Mobile?OpenDocument" >Mobile Apps</a></li></ul>	</div>	<div id="colomnTwo" class="grid_2">	<!--p class="ftHeader">Learn about...</p--><ul><li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Services%20for%20Libraries%20-%20Historical%20Publications" >Historical releases</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/d3310114.nsf/home/services+we+provide+to+small+business" >Information for small business</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/geography" >Statistical geography</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Methods,+Classifications,+Concepts+&+Standards?opendocument" >Statistical methods & classifications</a></li></ul>	</div>	<div id="colomnThree" class="grid_2">	<!--p class="ftHeader">About this site</p--><ul><li><a href="https://www.abs.gov.au/about" >About the ABS</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/Corporate.nsf/Home/Careers+Entry+Page?opendocument" >Careers</a></li>
+<li><a href="https://www.abs.gov.au/contact" >Contact us</a></li>
+<li><a href="https://www4.abs.gov.au/web/survey.nsf/contactform/" >Information consultancy service</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Increasing+your+safety+online" >Online security</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/What's+New" >Past releases and updates</a></li>
+<li><a href="https://www.abs.gov.au/help" >Help</a></li></ul>	</div>	<div id="colomnFour" class="grid_2 col4"><div id="needHelp"><p class="wantHelp">Want to help us improve our website?</p><a href="https://secure.peoplepulse.com.au/survey.php?mid=20833720966997400015" class="feedback">Provide feedback</a></div><div id="socialIcons"><p class="wantHelp">Follow us on...</p><a href="https://www.facebook.com/absstats" title="ABS Facebook page" class="logoReplacement" ><img src="https://www.abs.gov.au/ausstats/wmdata.nsf/activeotherresource/HPfacebook/$File/HPfacebook.svg" class="logoImg" alt="Facebook logo">Like us on Facebook</a><a href="https://twitter.com/ABSStats" title="ABS Twitter page" class="logoReplacement" ><img src="https://www.abs.gov.au/ausstats/wmdata.nsf/activeotherresource/HPtwitter/$File/HPtwitter.svg" class="logoImg" alt="Twitter logo">Follow us on Twitter</a><a href="https://www.instagram.com/absstats/" title="ABS Instagram" class="logoReplacement" ><img src="https://www.abs.gov.au/ausstats/wmdata.nsf/activeotherresource/HPinstagram/$File/HPinstagram.svg" class="logoImg" alt="Instagram logo">Follow us on Instagram </a><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/RSS+Help" title="ABS RSS feed" class="logoReplacement" ><img src="https://www.abs.gov.au/ausstats/wmdata.nsf/activeotherresource/HPrss/$File/HPrss.svg" class="logoImg" alt="RSS logo">ABS RSS feed</a><a href="https://www4.abs.gov.au/ausstats/notifications.nsf/Web+Pages/ABS+Email+Notification+Service?OpenDocument&amp;js=enabled" title="ABS Email Notification Service" class="logoReplacement"><img src="https://www.abs.gov.au/ausstats/wmdata.nsf/activeotherresource/HPemail/$File/HPemail.svg" class="logoImg" alt="Email logo">Subscribe to ABS updates</a></div>	</div></div><div class="secondFooter"><ul><li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Creative%20Commons%20licensing">Creative Commons</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/%A9+Copyright?opendocument" >Copyright</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Disclaimer?opendocument" >Disclaimer</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Privacy?opendocument" >Privacy</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/Site+Map?OpenDocument" >Sitemap</a></li>
+<li><a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Connect@ABS" >Staff login</a></li></ul></div></div><!-- footer --><!-- End Footer--><!-- Google Analytics disabled --></div><!--sitewrapper--><!-- End SkinPost -->
+        
+        <script type='text/javascript' src='/ausstats/wmdata.nsf/activejavascripts/googleanalytics/$File/googleanalytics.js'></script>
+    </body>
+</html>

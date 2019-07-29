@@ -454,11 +454,11 @@ Time,Value,MEASURE,Description
 2016,131,CABEE_15,Total number of business exits (no.)
 2017,141,CABEE_15,Total number of business exits (no.)
 2018,141,CABEE_15,Total number of business exits (no.)
-2014,17,CABEE_19,Agriculture
-2015,13,CABEE_19,Agriculture
-2016,16,CABEE_19,Agriculture
-2017,13,CABEE_19,Agriculture
-2018,13,CABEE_19,Agriculture
+2014,17,CABEE_19,"Agriculture, forestry and fishing (no.)"
+2015,13,CABEE_19,"Agriculture, forestry and fishing (no.)"
+2016,16,CABEE_19,"Agriculture, forestry and fishing (no.)"
+2017,13,CABEE_19,"Agriculture, forestry and fishing (no.)"
+2018,13,CABEE_19,"Agriculture, forestry and fishing (no.)"
 2015,3,CABEE_28,Mining (no.)
 2014,7,CABEE_27,Manufacturing (no.)
 2015,13,CABEE_27,Manufacturing (no.)
@@ -488,11 +488,11 @@ Time,Value,MEASURE,Description
 2016,62,CABEE_17,Accommodation and food services (no.)
 2017,53,CABEE_17,Accommodation and food services (no.)
 2018,56,CABEE_17,Accommodation and food services (no.)
-2014,57,CABEE_36,Transport
-2015,62,CABEE_36,Transport
-2016,71,CABEE_36,Transport
-2017,79,CABEE_36,Transport
-2018,95,CABEE_36,Transport
+2014,57,CABEE_36,"Transport, postal and warehousing (no.)"
+2015,62,CABEE_36,"Transport, postal and warehousing (no.)"
+2016,71,CABEE_36,"Transport, postal and warehousing (no.)"
+2017,79,CABEE_36,"Transport, postal and warehousing (no.)"
+2018,95,CABEE_36,"Transport, postal and warehousing (no.)"
 2014,15,CABEE_26,Information media and telecommunications (no.)
 2015,11,CABEE_26,Information media and telecommunications (no.)
 2016,4,CABEE_26,Information media and telecommunications (no.)
@@ -503,11 +503,11 @@ Time,Value,MEASURE,Description
 2016,65,CABEE_24,Financial and insurance services (no.)
 2017,71,CABEE_24,Financial and insurance services (no.)
 2018,84,CABEE_24,Financial and insurance services (no.)
-2014,138,CABEE_33,Rental
-2015,138,CABEE_33,Rental
-2016,142,CABEE_33,Rental
-2017,124,CABEE_33,Rental
-2018,135,CABEE_33,Rental
+2014,138,CABEE_33,"Rental, hiring and real estate services (no.)"
+2015,138,CABEE_33,"Rental, hiring and real estate services (no.)"
+2016,142,CABEE_33,"Rental, hiring and real estate services (no.)"
+2017,124,CABEE_33,"Rental, hiring and real estate services (no.)"
+2018,135,CABEE_33,"Rental, hiring and real estate services (no.)"
 2014,153,CABEE_31,Professional Scientific & Technical Services (no.)
 2015,160,CABEE_31,Professional Scientific & Technical Services (no.)
 2016,171,CABEE_31,Professional Scientific & Technical Services (no.)
@@ -709,14 +709,14 @@ Time,Value,MEASURE,Description
 2014,1,TOURIST_2,Establishments with 15 or more rooms (no.)
 2015,1,TOURIST_2,Establishments with 15 or more rooms (no.)
 2016,1,TOURIST_2,Establishments with 15 or more rooms (no.)
-2011,0.1,EMP_IND_2,Agriculture
-2016,0.1,EMP_IND_2,Agriculture
+2011,0.1,EMP_IND_2,"Agriculture, forestry and fishing (no.)"
+2016,0.1,EMP_IND_2,"Agriculture, forestry and fishing (no.)"
 2011,0.2,EMP_IND_3,Mining (%)
 2016,0.2,EMP_IND_3,Mining (%)
 2011,3.5,EMP_IND_4,Manufacturing  (%)
 2016,2.4,EMP_IND_4,Manufacturing  (%)
-2011,0.4,EMP_IND_5,Electricity
-2016,0.6,EMP_IND_5,Electricity
+2011,0.4,EMP_IND_5,"Electricity, gas water and waste services (no.)"
+2016,0.6,EMP_IND_5,"Electricity, gas water and waste services (no.)"
 2011,4,EMP_IND_6,Construction (%)
 2016,5,EMP_IND_6,Construction (%)
 2011,3.8,EMP_IND_7,Wholesale trade (%)
@@ -725,14 +725,14 @@ Time,Value,MEASURE,Description
 2016,8.7,EMP_IND_8,Retail trade (%)
 2011,9.4,EMP_IND_9,Accommodation and food services (%)
 2016,11.4,EMP_IND_9,Accommodation and food services (%)
-2011,4,EMP_IND_10,Transport
-2016,3.5,EMP_IND_10,Transport
+2011,4,EMP_IND_10,"Transport, postal and warehousing (no.)"
+2016,3.5,EMP_IND_10,"Transport, postal and warehousing (no.)"
 2011,3.1,EMP_IND_11,Information media and telecommunications (%)
 2016,2.8,EMP_IND_11,Information media and telecommunications (%)
 2011,7.6,EMP_IND_12,Financial and insurance services (%)
 2016,6.4,EMP_IND_12,Financial and insurance services (%)
-2011,2,EMP_IND_13,Rental
-2016,2,EMP_IND_13,Rental
+2011,2,EMP_IND_13,"Rental, hiring and real estate services (no.)"
+2016,2,EMP_IND_13,"Rental, hiring and real estate services (no.)"
 2011,12.1,EMP_IND_14,Professional Scientific & Technical Services (%)
 2016,12.4,EMP_IND_14,Professional Scientific & Technical Services (%)
 2011,3.3,EMP_IND_15,Administrative and support services (%)
@@ -1095,8 +1095,8 @@ Time,Value,MEASURE,Description
 2016,6.6,SCHOOL_6,With Advanced Diploma/Diploma (%)
 2011,7.4,SCHOOL_7,With Certificate (%)
 2016,7,SCHOOL_7,With Certificate (%)
-2011,11.2,SCHOOL_8,Post School Qualifications - Inadequately described
-2016,9.8,SCHOOL_8,Post School Qualifications - Inadequately described
+2011,11.2,SCHOOL_8,Post School Qualifications - Inadequately described (%)
+2016,9.8,SCHOOL_8,Post School Qualifications - Inadequately described (%)
 2011,280,HELP_2,Taxpayers with Higher Education Loan Program (HELP) repayment (no.)
 2012,311,HELP_2,Taxpayers with Higher Education Loan Program (HELP) repayment (no.)
 2013,298,HELP_2,Taxpayers with Higher Education Loan Program (HELP) repayment (no.)
@@ -1315,11 +1315,11 @@ Time,Value,MEASURE,Description
 2015,61,BD_4,Births and Deaths - Deaths (no.)
 2016,78,BD_4,Births and Deaths - Deaths (no.)
 2017,66,BD_4,Births and Deaths - Deaths (no.)
-2013,4.5,BD_5,Births and Deaths - Standardised death rate (per 1
-2014,4.7,BD_5,Births and Deaths - Standardised death rate (per 1
-2015,4.4,BD_5,Births and Deaths - Standardised death rate (per 1
-2016,5,BD_5,Births and Deaths - Standardised death rate (per 1
-2017,5.1,BD_5,Births and Deaths - Standardised death rate (per 1
+2013,4.5,BD_5,Births and Deaths - Standardised death rate (per 1000 population) (rate)
+2014,4.7,BD_5,Births and Deaths - Standardised death rate (per 1000 population) (rate)
+2015,4.4,BD_5,Births and Deaths - Standardised death rate (per 1000 population) (rate)
+2016,5,BD_5,Births and Deaths - Standardised death rate (per 1000 population) (rate)
+2017,5.1,BD_5,Births and Deaths - Standardised death rate (per 1000 population) (rate)
 2017,153,PENSION_16,Carer Allowance (no.)
 2018,157,PENSION_16,Carer Allowance (no.)
 2017,9,PENSION_17,Parenting Payment - Partnered (no.)
@@ -1334,18 +1334,18 @@ Time,Value,MEASURE,Description
 2016,68.2,STRESS_4,Households where rent payments are less than 30% of household income (%)
 2011,25.1,STRESS_5,Households with rent payments greater than or equal to 30% of household income (%)
 2016,31.8,STRESS_5,Households with rent payments greater than or equal to 30% of household income (%)
-2017,991,MIGRATION_2,Internal Arrivals
-2018,1189,MIGRATION_2,Internal Arrivals
-2017,1605,MIGRATION_3,Internal Departures
-2018,1626,MIGRATION_3,Internal Departures
-2017,-614,MIGRATION_4,Net Internal Migration
-2018,-437,MIGRATION_4,Net Internal Migration
-2017,2475,MIGRATION_5,Overseas Arrivals
-2018,2306,MIGRATION_5,Overseas Arrivals
-2017,1280,MIGRATION_6,Overseas Departures
-2018,1364,MIGRATION_6,Overseas Departures
-2017,1195,MIGRATION_7,Net Overseas Migration
-2018,942,MIGRATION_7,Net Overseas Migration
+2017,991,MIGRATION_2,Internal Arrivals (no.)
+2018,1189,MIGRATION_2,Internal Arrivals (no.)
+2017,1605,MIGRATION_3,Internal Departures (no.)
+2018,1626,MIGRATION_3,Internal Departures (no.)
+2017,-614,MIGRATION_4,Net Internal Migration (no.)
+2018,-437,MIGRATION_4,Net Internal Migration (no.)
+2017,2475,MIGRATION_5,Overseas Arrivals (no.)
+2018,2306,MIGRATION_5,Overseas Arrivals (no.)
+2017,1280,MIGRATION_6,Overseas Departures (no.)
+2018,1364,MIGRATION_6,Overseas Departures (no.)
+2017,1195,MIGRATION_7,Net Overseas Migration (no.)
+2018,942,MIGRATION_7,Net Overseas Migration (no.)
 2012,4989,LEED_2,Number of Jobs - Females
 2013,5275,LEED_2,Number of Jobs - Females
 2014,5367,LEED_2,Number of Jobs - Females
@@ -1361,22 +1361,22 @@ Time,Value,MEASURE,Description
 2014,11194,LEED_4,Number of Jobs - Persons
 2015,11247,LEED_4,Number of Jobs - Persons
 2016,11217,LEED_4,Number of Jobs - Persons
-2012,55,LEED_5,Number of Employee Jobs - Agriculture
-2013,91,LEED_5,Number of Employee Jobs - Agriculture
-2014,108,LEED_5,Number of Employee Jobs - Agriculture
-2015,76,LEED_5,Number of Employee Jobs - Agriculture
-2016,119,LEED_5,Number of Employee Jobs - Agriculture
+2012,55,LEED_5,"Number of Employee Jobs - Agriculture, forestry and fishing"
+2013,91,LEED_5,"Number of Employee Jobs - Agriculture, forestry and fishing"
+2014,108,LEED_5,"Number of Employee Jobs - Agriculture, forestry and fishing"
+2015,76,LEED_5,"Number of Employee Jobs - Agriculture, forestry and fishing"
+2016,119,LEED_5,"Number of Employee Jobs - Agriculture, forestry and fishing"
 2012,23,LEED_6,Number of Employee Jobs - Mining
 2012,262,LEED_7,Number of Employee Jobs - Manufacturing
 2013,282,LEED_7,Number of Employee Jobs - Manufacturing
 2014,298,LEED_7,Number of Employee Jobs - Manufacturing
 2015,280,LEED_7,Number of Employee Jobs - Manufacturing
 2016,267,LEED_7,Number of Employee Jobs - Manufacturing
-2012,27,LEED_8,Number of Employee Jobs - Electricity
-2013,23,LEED_8,Number of Employee Jobs - Electricity
-2014,29,LEED_8,Number of Employee Jobs - Electricity
-2015,36,LEED_8,Number of Employee Jobs - Electricity
-2016,38,LEED_8,Number of Employee Jobs - Electricity
+2012,27,LEED_8,"Number of Employee Jobs - Electricity, gas water and waste services"
+2013,23,LEED_8,"Number of Employee Jobs - Electricity, gas water and waste services"
+2014,29,LEED_8,"Number of Employee Jobs - Electricity, gas water and waste services"
+2015,36,LEED_8,"Number of Employee Jobs - Electricity, gas water and waste services"
+2016,38,LEED_8,"Number of Employee Jobs - Electricity, gas water and waste services"
 2012,272,LEED_9,Number of Employee Jobs - Construction
 2013,353,LEED_9,Number of Employee Jobs - Construction
 2014,397,LEED_9,Number of Employee Jobs - Construction
@@ -1397,11 +1397,11 @@ Time,Value,MEASURE,Description
 2014,1098,LEED_12,Number of Employee Jobs - Accommodation and food services
 2015,1057,LEED_12,Number of Employee Jobs - Accommodation and food services
 2016,1103,LEED_12,Number of Employee Jobs - Accommodation and food services
-2012,246,LEED_13,Number of Employee Jobs - Transport
-2013,241,LEED_13,Number of Employee Jobs - Transport
-2014,261,LEED_13,Number of Employee Jobs - Transport
-2015,260,LEED_13,Number of Employee Jobs - Transport
-2016,241,LEED_13,Number of Employee Jobs - Transport
+2012,246,LEED_13,"Number of Employee Jobs - Transport, postal and warehousing "
+2013,241,LEED_13,"Number of Employee Jobs - Transport, postal and warehousing "
+2014,261,LEED_13,"Number of Employee Jobs - Transport, postal and warehousing "
+2015,260,LEED_13,"Number of Employee Jobs - Transport, postal and warehousing "
+2016,241,LEED_13,"Number of Employee Jobs - Transport, postal and warehousing "
 2012,317,LEED_14,Number of Employee Jobs - Information media and telecommunications
 2013,330,LEED_14,Number of Employee Jobs - Information media and telecommunications
 2014,353,LEED_14,Number of Employee Jobs - Information media and telecommunications
@@ -1412,16 +1412,16 @@ Time,Value,MEASURE,Description
 2014,533,LEED_15,Number of Employee Jobs - Finance and insurance services
 2015,518,LEED_15,Number of Employee Jobs - Finance and insurance services
 2016,520,LEED_15,Number of Employee Jobs - Finance and insurance services
-2012,182,LEED_16,Number of Employee Jobs - Rental
-2013,186,LEED_16,Number of Employee Jobs - Rental
-2014,208,LEED_16,Number of Employee Jobs - Rental
-2015,230,LEED_16,Number of Employee Jobs - Rental
-2016,219,LEED_16,Number of Employee Jobs - Rental
-2012,1022,LEED_17,Number of Employee Jobs - Professional
-2013,963,LEED_17,Number of Employee Jobs - Professional
-2014,1015,LEED_17,Number of Employee Jobs - Professional
-2015,1107,LEED_17,Number of Employee Jobs - Professional
-2016,1149,LEED_17,Number of Employee Jobs - Professional
+2012,182,LEED_16,"Number of Employee Jobs - Rental, hiring and real estate services"
+2013,186,LEED_16,"Number of Employee Jobs - Rental, hiring and real estate services"
+2014,208,LEED_16,"Number of Employee Jobs - Rental, hiring and real estate services"
+2015,230,LEED_16,"Number of Employee Jobs - Rental, hiring and real estate services"
+2016,219,LEED_16,"Number of Employee Jobs - Rental, hiring and real estate services"
+2012,1022,LEED_17,"Number of Employee Jobs - Professional, scientific and technical services"
+2013,963,LEED_17,"Number of Employee Jobs - Professional, scientific and technical services"
+2014,1015,LEED_17,"Number of Employee Jobs - Professional, scientific and technical services"
+2015,1107,LEED_17,"Number of Employee Jobs - Professional, scientific and technical services"
+2016,1149,LEED_17,"Number of Employee Jobs - Professional, scientific and technical services"
 2012,840,LEED_18,Number of Employee Jobs - Administrative and support services
 2013,904,LEED_18,Number of Employee Jobs - Administrative and support services
 2014,1003,LEED_18,Number of Employee Jobs - Administrative and support services
@@ -1556,28 +1556,29 @@ Time,Value,MEASURE,Description
 2011,7,QUALMIG_5,Advanced Diploma and Diploma level (%)
 2016,6.6,QUALMIG_5,Advanced Diploma and Diploma level (%)
 2011,4.4,QUALMIG_6,Certificate level (%)
-2016,5.1,QUALMIG_6,Certificate level (%)
+2016,3.8,QUALMIG_6,Certificate level (%)
 2011,41.1,QUALMIG_7,School education level (%)
+2016,40,QUALMIG_7,School education level (%)
 2011,3.8,QUALMIG_8,Education not stated (%)
-2016,2,QUALMIG_8,Education not stated (%)
-2011,5.5,OCCMIG_2,Managers (%)
-2016,5.1,OCCMIG_2,Managers (%)
-2011,15.1,OCCMIG_3,Professionals (%)
-2016,14.6,OCCMIG_3,Professionals (%)
-2011,3.9,OCCMIG_4,Technicians and trades workers (%)
-2016,3.3,OCCMIG_4,Technicians and trades workers (%)
-2011,4.5,OCCMIG_5,Community and personal service workers (%)
-2016,4.8,OCCMIG_5,Community and personal service workers (%)
-2011,6.2,OCCMIG_6,Clerical and administrative workers (%)
-2016,4.9,OCCMIG_6,Clerical and administrative workers (%)
-2011,4.2,OCCMIG_7,Sales workers (%)
-2016,3.8,OCCMIG_7,Sales workers (%)
-2011,1.5,OCCMIG_8,Machinery operators and drivers (%)
-2016,1.4,OCCMIG_8,Machinery operators and drivers (%)
-2011,2.7,OCCMIG_9,Labourers (%)
-2016,3,OCCMIG_9,Labourers (%)
-2011,0.4,OCCMIG_10,Occupation not stated (%)
-2016,0.3,OCCMIG_10,Occupation not stated (%)
+2016,2.5,QUALMIG_8,Education not stated (%)
+2011,12.3,OCCMIG_2,Managers (%)
+2016,12.2,OCCMIG_2,Managers (%)
+2011,33.9,OCCMIG_3,Professionals (%)
+2016,35.1,OCCMIG_3,Professionals (%)
+2011,8.7,OCCMIG_4,Technicians and trades workers (%)
+2016,7.9,OCCMIG_4,Technicians and trades workers (%)
+2011,10.1,OCCMIG_5,Community and personal service workers (%)
+2016,11.6,OCCMIG_5,Community and personal service workers (%)
+2011,13.9,OCCMIG_6,Clerical and administrative workers (%)
+2016,11.8,OCCMIG_6,Clerical and administrative workers (%)
+2011,9.3,OCCMIG_7,Sales workers (%)
+2016,9.3,OCCMIG_7,Sales workers (%)
+2011,3.4,OCCMIG_8,Machinery operators and drivers (%)
+2016,3.4,OCCMIG_8,Machinery operators and drivers (%)
+2011,6.1,OCCMIG_9,Labourers (%)
+2016,7.3,OCCMIG_9,Labourers (%)
+2011,2.3,OCCMIG_10,Occupation inadequately described or not stated  (%)
+2016,1.5,OCCMIG_10,Occupation inadequately described or not stated  (%)
 2011,3010,LFMIG_2,Labour Force number (no.)
 2016,3671,LFMIG_2,Labour Force number (no.)
 2011,367,LFMIG_3,Unemployed number (no.)
@@ -1591,9 +1592,9 @@ Time,Value,MEASURE,Description
 2016,17.4,INCMIG_4,Persons earning $1000-$1999 per week (%)
 2016,4.4,INCMIG_5,Persons earning $2000-$2999 per week (%)
 2016,3.2,INCMIG_6,Persons earning $3000 or more per week (%)
-2016,0.3,INCMIG_7,Persons earning nil income (%)
+2016,32.3,INCMIG_7,Persons earning nil income (%)
 2016,1.1,INCMIG_8,Persons with a negative income (%)
-2016,1.6,INCMIG_9,Income not stated (%)
+2016,1.6,INCMIG_9,Income inadequately described or not stated (%)
 2011,4.8,FIELD_2,Natural and Physical Sciences (%)
 2016,5.6,FIELD_2,Natural and Physical Sciences (%)
 2011,4.1,FIELD_3,Information Technology (%)
@@ -1622,3 +1623,4 @@ Time,Value,MEASURE,Description
 2016,15,FIELD_14,Field of Study Inadequately Described or Not Stated  (%)
 2011,60.2,HOMELESS_2,"Homeless rate per 10,000 persons"
 2016,61.1,HOMELESS_2,"Homeless rate per 10,000 persons"
+2016,8.8,PERSINC_9,Persons with income not stated (%)
