@@ -139,11 +139,9 @@ def wordy_pyramid():
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
     
     wordlist = []
-    templist =[]
-    templist2 =[]
 
-    def refractor_WP(start,stop):
-        for i in range(start,stop+1):
+    def refractor_WP(start,stop,step):
+        for i in range(start,stop, step):
             fullurl=url.format(len=i)
             pull = requests.get(fullurl)   
             if pull.status_code is 200:         
@@ -152,15 +150,10 @@ def wordy_pyramid():
                     pass
                 else:
                     randword = str(randword)
-                    if int(i) % 2 ==0:
-                        templist2.append(randword[2:len(randword)-1])
-                    else:
-                        templist.append(randword[2:len(randword)-1])
-        templist2.reverse()
-        wordlist.extend(templist)
-        wordlist.extend(templist2)
+                    wordlist.append(randword[2:len(randword)-1])
 
-    refractor_WP(3,20)    
+    refractor_WP(3,21,2)
+    refractor_WP(20,2,-2)    
     return wordlist
 
 
