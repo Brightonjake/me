@@ -95,20 +95,15 @@ def wordy_pyramid():
         pull = requests.get(fullurl)   
         if pull.status_code is 200:         
             randword = pull.content  
-                #    this retrives the word from the url
+            
             if randword is None: 
                 pass
             else:
                 randword = str(randword)
-                # below checks if the word will have odd or even 
-                # no. of characters. Then it sorts them into 
-                # separate lists
+                
                 if int(i) % 2 ==0:
                     templist2.append(randword[2:len(randword)-1])
-                    #  issue with words from this url is that
-                    #  they look like --> b'word' 
-                    #  so i've applied the range filter as seen above
-                    #  and below so to ignore the b' and '
+            
                 else:
                     templist.append(randword[2:len(randword)-1])
     templist2.reverse()
@@ -153,7 +148,6 @@ def pokedex(low=1, high=5):
         answer1 = data["name"]
         answer2 = data["weight"]
         answer3 = data["height"]
-#Refactor: Make a function and recall
 
     return {"name": answer1, "weight": answer2, "height": answer3}
 

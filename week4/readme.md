@@ -110,8 +110,6 @@ Word Pyramid
 
 
 
-    
-
 Pokedex Problem
 #Find tallest pokemon of first 5 entries into the pokedex and return information on them
 
