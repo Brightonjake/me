@@ -19,10 +19,9 @@ you'll need to figure out for yourself what to do.
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    for i in range(start,stop-1,-1):
+    for i in range(start-stop+1,stop-stop,-1):
         print(message + " " + str(i))
     print(completion_message)
-
 
 # TRIANGLES
 
