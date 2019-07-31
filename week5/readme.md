@@ -264,4 +264,4 @@ parts = axiom.split(" ")
 #3rd line
 new_string = " ".join(result)
 #Subtle difference. Space left between ""
-#Joins the string with a space between so it reads as a sentance
+#Joins the string with a space between so it reads as a sentanceUp
