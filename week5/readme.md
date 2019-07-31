@@ -67,7 +67,10 @@ def do_bunch_of_bad_things():
     yet_another_hyp = 40 ** 2 + 30 ** 2
     print(yet_another_hyp)
 
+
+
 #New functions
+
 
 def countdown(message, start, stop, completion_message):
     for i in range(start,stop-1,-1):
@@ -208,7 +211,57 @@ def list_of_words_with_lengths(list_of_lengths):
 
 
 
-
 if __name__ == "__main__":
     get_a_word_of_length_n(5)
 #At end of the exercise if you want to test something without having to type it in the debugger
+
+
+
+
+Exercise 2
+
+
+
+def abba(source="abba", guard=3):
+    
+    parts = list(source)
+#Splits the word into a list of letters eg abba = [a, b, b, a]. More friendly format
+    result = list(map(apply_rules, parts))
+#Applies rules to each letter in list
+    new_string = "".join(result)
+#Turns new list into a combined string    
+    guard -= 1
+#Takes 1 off the guard, otherwise it would run forever
+    if guard > 0:
+        return abba(new_string, guard)
+#repeats function with input of new_string, smaller guard
+    else:
+        return new_string
+#returns string after a few rounds
+
+def apply_rules(letter):
+#substitution function or the rules
+    if letter == "a":
+            return "bba"
+        elif letter == "b":
+            return "aob"
+        elif letter == "o":
+            return "oa" 
+        else:
+            return letter
+
+
+
+
+def italian_dinner(axiom="tomatoes", guard=6):
+
+#This differs from abba by:
+
+#1st line:
+parts = axiom.split(" ")
+#Splits by each word rather than individual letters
+
+#3rd line
+new_string = " ".join(result)
+#Subtle difference. Space left between ""
+#Joins the string with a space between so it reads as a sentance
