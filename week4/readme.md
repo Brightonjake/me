@@ -49,14 +49,7 @@ return {"lastName": answer1, "password": answer2, "postcodePlusID": answer5}
 Word Pyramid
 #API- application program (someone's code) interface
 
-    answer=[]
-
-    key = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
-    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key={key}&minLength={minLength}&maxLength={maxLength}&limit={limit}"
-
-    
-    api_key = 
-#Fill in when it arrives!!!!
+#OLD URL:
 
     baseURL = (
         "http://api.wordnik.com/v4/words.json/randomWords?"
@@ -65,32 +58,59 @@ Word Pyramid
         "&maxLength={length}"
         "&limit=1"
     )
-#? Divides website URL from the arguments [key, max length, min length, limit]
-#note nice indentation which breaks it up
+#? Divides website URL from the search arguments [key, max length, min length, limit]
+#API key- unique identifier used to authenticate requests. Given out individually by developer
+#Note: nice indentation which breaks it up
 
-    pyramid_list = []
-    for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
+#NEW CODE (copied)
+
+    import requests
+#Necessary package
+
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?
+    wordlength={len}"
+#New URL developed by Ben
+
+    mino = 3
+    maxo = 20
+    wordlist = []
+    templist =[]
+    templist2 =[]
+#Assign variable to control bounds, left general terms so it can be called
+#Creates empty lists
+
+    for i in range(mino,maxo+1):
+        fullurl=url.format(len=i)
+#Changes URL for each iteration
+        pull = requests.get(fullurl) 
+#Gets information from URL  
+        if pull.status_code is 200:  
+#Checks status, 200 = all good :)       
+            randword = pull.content  
+#Retrieves word from the url, different from original code (r.json()[0]["word"])
+            if randword is None: 
+                pass
+            else:
+                randword = str(randword)
+#below checks if the word will have odd or even no. of characters. Then it sorts them into separate lists. Rather than having two separate functions
+                if int(i) % 2 ==0:
+                    templist2.append(randword[2:len(randword)-1])
+#Issue with words from this url is that they look like --> b'word' 
+#Applied the range filter as seen above and below so to ignore the b' and '
+                else:
+                    templist.append(randword[2:len(randword)-1])
+    templist2.reverse()
+#Changes order of the words to be descending as per requirements
+
+    wordlist.extend(templist)
+    wordlist.extend(templist2)
+#Joins two lists together
+
+    return wordlist
+
+
+
     
-    for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
-    return pyramid_list
-#Explain
-
-
-
 
 Pokedex Problem
 #Find tallest pokemon of first 5 entries into the pokedex and return information on them
