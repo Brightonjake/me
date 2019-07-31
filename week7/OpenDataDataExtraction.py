@@ -6,9 +6,12 @@ files = []
 # r=root, d=directories, f = files
 for r, d, f in os.walk(path):
     for file in f:
-        if '.txt' in file:
-            files.append(os.path.join(r, file))
-#Create list of all the files in the directory        
+        if file == '.DS_Store':
+                pass
+    #Exception for random file, not sure what it is
+        else:
+                files.append(os.path.join(r, file))
+    #Create list of all the files in the directory        
 
 temp_table= pd.DataFrame()
 
@@ -16,6 +19,7 @@ for f in files:
     read_file = pd.read_csv(f)
     #Reads different file for each iteration
 
+    search_criteria = read_file['Description']== "Homeless rate per 10,000 persons"
     new_info = read_file[search_criteria]
     #Searches the file and obtains rows with certain characteristic
 
