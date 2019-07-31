@@ -73,9 +73,11 @@ def do_bunch_of_bad_things():
 
 
 def countdown(message, start, stop, completion_message):
-    for i in range(start,stop-1,-1):
-#Stop -1 so it includes the value of stop
-#-1 Step so it counts down
+    for i in range(start-stop+1,stop-stop,-1):
+#Range function inputs:
+#Start-stop+1 readjusts the start value based off stop value
+#stop-stop ensures that stop = 0 even if wrong input 
+#-1 counts down
         print(message + " " + str(i))
     print(completion_message)
 
