@@ -20,7 +20,7 @@ a_string.upper() + '!'
 #concatenate: combine/add. Adds exclamation mark (note: '' to make ! a string)
 
 a_string.upper() + " " + str(a_number)
-#Note: " " adds a space, str needed to convert integer to a string
+#Note: " " adds a space, str needed to convert unknown integer to a string. Can't use " " because this changes the variable to text
 
 
 
