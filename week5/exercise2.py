@@ -141,8 +141,7 @@ def draw_koch(drawing_method, steps_deep=4):
     https://docs.python.org/3/library/turtle.html
     """
     raphael = turtle.Turtle()
-    raphael.speed(500)
-#change speed back up to 1000 afterwards
+    raphael.speed(1000)
     raphael.penup()
     raphael.goto(-300, 0)
     raphael.pendown()
@@ -163,15 +162,15 @@ def square_koch(t, order, size):
     if order == 0:        
         t.forward(size)
     else:
-        trace += koch(t, order-1, size/3)   
+        trace += square_koch(t, order-1, size/3)   
         t.left(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
         t.right(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
         t.right(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
         t.left(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
     return str(order) + trace
 
 
