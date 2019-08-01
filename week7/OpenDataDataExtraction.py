@@ -25,10 +25,20 @@ for f in files:
 
     new_info = new_info.reset_index(drop=True)
     #deletes index column
+    
+    make_string = str(f)
+    split_filepath = make_string.split("/")
+    name_and_code= split_filepath[2]
+    split_name_and_code= name_and_code.split("_")
+    area_code = split_name_and_code[0]
+    area_name = split_name_and_code[1]
+    #Breaks down filename for area name and code
  
-    new_column = [f,f]
-    new_info['Area'] = new_column
-    #Adds new column with area name
+    area_column = [area_name,area_name]
+    code_column = [area_code,area_code]
+    new_info['Code'] = code_column
+    new_info['Area'] = area_column
+    #Adds new column with area name and code
 
     main_table = pd.concat([new_info, temp_table], axis=0)
     temp_table = main_table
