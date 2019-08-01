@@ -174,28 +174,23 @@ def get_a_word_of_length_n(length):
 
 def list_of_words_with_lengths(list_of_lengths):
     import requests
-    import time
 
-    pyramid_list = []
+    list_of_words = []
 
-    baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
-        "&minLength={length}"
-        "&maxLength={length}"
-        "&limit=1")
-    
-    for i in range(2):
-        url = baseURL.format(api_key="yl8vro4nxaxv736r8qv0bhxcgpjj1oab3zm0yzfmxyh5yiypo",length=(list_of_lengths[i]))
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
+    for i in list_of_lengths:
+        url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={leng}"
+        if type(i) == int and i >= 3:
+            fullurl=url.format(leng=i)
+            pull = requests.get(fullurl)   
+            if pull.status_code is 200:         
+                wordn = pull.content  
+                wordn = str(wordn)
+                outputword = wordn[2:len(wordn)-1]
+                list_of_words.append(outputword)
+        else:
+            pass
 
-    return pyramid_list
-
+    return list_of_words
 
 if __name__ == "__main__":
-    get_a_word_of_length_n(5)
-    wordy_pyramid()
-    
+    list_of_words_with_lengths([4,5,8])
