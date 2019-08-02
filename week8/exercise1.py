@@ -220,7 +220,6 @@ def fast_filler(number_of_words=200):
         f.close
     
     dictionary = open("dict_racey.json").read()
-    
     paragraph = []
 
     for i in range(number_of_words):
