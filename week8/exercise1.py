@@ -144,28 +144,25 @@ def make_filler_text_dictionary():
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
 
-    word_list = []
+    my_dict = {}
 
     def get_words():
         for i in range (3,8):
-            full_url = url.format(length=i)
-            r = requests.get(full_url)
-            if r.status_code is 200:
-                word = r.text
-                word_list.append(word)
+            word_list = []
+            for _ in range(3):
+                full_url = url.format(length=i)
+                r = requests.get(full_url)
+                if r.status_code is 200:
+                    word = r.text
+                    word_list.append(word)
+        my_dict[i] = word_list
 
-    get_words()
-    get_words()
-    get_words()
+    return my_dict
 
-    list_3 = [word_list[0],word_list[5],word_list[10]]
-    list_4 = [word_list[1],word_list[6],word_list[11]]
-    list_5 = [word_list[2],word_list[7],word_list[12]]
-    list_6 = [word_list[3],word_list[8],word_list[13]]
-    list_7 = [word_list[4],word_list[9],word_list[14]]
-
-    return { 3: list_3 , 4: list_4 , 5: list_5 , 6: list_6, 7: list_7}
-
+def getRandomWord(word_list):
+    import random
+    wordIndex = random.randInt(0,len(wordList)-1)
+    return word_list [wordIndex]
 
 def random_filler_text(number_of_words=200):
     """Make a paragraph of random filler text.
@@ -179,18 +176,15 @@ def random_filler_text(number_of_words=200):
     """
     import random
 
-    dictionary = make_filler_text_dictionary()
     paragraph = []
+    random_dict = make_filler_text_dictionary()
 
-    for i in range(number_of_words):
-        dictionary_index = random.randint(3,7)
-        word_index = random.randint(0,2)
-        random_word = dictionary [dictionary_index][word_index]
+    for _ in range (number_of_words):
+        randomInt = random.randint(3,7)
+        random_word = getRandomWord (random_dict [randomInt])
         paragraph.append(random_word)
 
-    string = " ".join(paragraph)
-    return string
-
+    return " ".join(paragraph)
 
 def fast_filler(number_of_words=200):
     """Reimplement random_filler_text.
@@ -211,27 +205,25 @@ def fast_filler(number_of_words=200):
     import json
     import random
 
-    exists = os.path.isfile("dict_racey.json")
-    if exists:
-        pass
-    else:
-        with open("dict_racey.json", "w") as write_file:
-            json.dump(make_filler_text_dictionary(), write_file)
     
-    with open("dict_racey.json", "r") as json_file:
-        dictionary = json.load(json_file)
-    paragraph = []
+    if os.path.exists("dict_racey.json"):
+        
+        with open("dict_racey.json",'r') as outfile:
+            random_dict=json.load(outfile)
+          
+    else:
+        paragraph = []
+        random_dict = make_filler_text_dictionary()
 
-    for i in range(number_of_words):
-        dictionary_index = random.randint(3,7)
-        word_index = random.randint(0,2)
-        random_word = dictionary [str(dictionary_index)][word_index]
+        with open("dict_racey.json",'w') as outfile:
+            json.dumps(random_dict,outfile)
+
+    for _ in range (number_of_words):
+        randomInt = random.randint(3,7)
+        random_word = getRandomWord (random_dict [randomInt])
         paragraph.append(random_word)
-
-    string = " ".join(paragraph)
-    return string
-
-
+    return " ".join(paragraph)
+            
 if __name__ == "__main__":
     print("greet:", greet())
     print("three_counter:", three_counter())
