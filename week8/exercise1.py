@@ -207,6 +207,15 @@ def fast_filler(number_of_words=200):
     If you get this one to work, you are a Very Good Programmer™!
     """
 
+    import os
+    import json
+
+    random_filler_text
+
+    make_filler_text_dictionary
+
+    dict_racey.json
+
     #return paragraph
 
 
