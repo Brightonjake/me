@@ -179,12 +179,17 @@ def random_filler_text(number_of_words=200):
     """
     import random
 
+    dictionary = make_filler_text_dictionary()
+    paragraph = []
+
     for i in range(number_of_words):
         dictionary_index = random.randint(3,7)
         word_index = random.randint(0,2)
-        random_word
+        random_word = dictionary [dictionary_index][word_index]
+        paragraph.append(random_word)
 
-    return ""
+    string = " ".join(paragraph)
+    return string
 
 
 def fast_filler(number_of_words=200):
