@@ -209,14 +209,28 @@ def fast_filler(number_of_words=200):
 
     import os
     import json
+    import random
 
-    random_filler_text
+    exists = os.path.isfile("dict_racey.json")
+    if exists:
+        pass
+    else:
+        f = open("dict_racey.json", "w+")
+        f.write(str(make_filler_text_dictionary()))
+        f.close
+    
+    dictionary = open("dict_racey.json").read()
+    
+    paragraph = []
 
-    make_filler_text_dictionary
+    for i in range(number_of_words):
+        dictionary_index = random.randint(3,7)
+        word_index = random.randint(0,2)
+        random_word = dictionary [dictionary_index][word_index]
+        paragraph.append(random_word)
 
-    dict_racey.json
-
-    #return paragraph
+    string = " ".join(paragraph)
+    return string
 
 
 if __name__ == "__main__":
