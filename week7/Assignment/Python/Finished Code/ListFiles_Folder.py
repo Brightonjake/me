@@ -1,6 +1,6 @@
 import os
 
-path = 'week7/Data/'
+path = 'week7/Assignment/CSV Files'
 
 files = []
 # r=root, d=directories, f = files
