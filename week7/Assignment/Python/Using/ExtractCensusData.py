@@ -23,7 +23,7 @@ for f in files:
                 pass
     #Reads different file for each iteration
 
-        search_criteria = read_file['Description']== "Campervans (no.)"
+        search_criteria = read_file['Description']== "Total population (no.)"
         new_info = read_file[search_criteria]
         #Searches the file and obtains rows with certain characteristic
 
@@ -50,5 +50,5 @@ main_table= main_table.drop ("MEASURE",axis=1)
 main_table= main_table.drop ("Description",axis=1)
 #Deletes measure column, description column
 
-new_file = "week7/Assignment/Caravan"
+new_file = "week7/Assignment/population"
 main_table.to_csv(new_file, encoding='utf-8', index=False)
